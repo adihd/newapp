@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zangdar</title>
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+	<style>
+		.zangdar__wizard .zangdar__step {
+			display: none;
+		}
+		.zangdar__wizard .zangdar__step.zangdar__step__active {
+			display: block;
+		}
+		.form-completed {
+			display: none;
+		}
+		.step li.step-item:first-child::before {
+			background: transparent !important;
+		}
+
+		.zangdar-form-2 {
+			position: relative;
+		}
+
+		.zangdar-form-2 .zangdar__step {
+			position: absolute;
+			visibility: hidden;
+		}
+		.zangdar-form-2 .zangdar__step.zangdar__step__active {
+			visibility: visible;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="columns">
+		<div class="col">
+			<h2>Wizard generated from HTML</h2>
+			<ul id="steps" class="step"></ul>
+			<form id="zangdar-form" class="my-2 py-2">
+				<section data-step="1">
+					<div class="form-group field__name">
+						<label class="form-label" for="name">Nom</label>
+						<input type="text" id="name" name="name" class="form-input" required>
+					</div>
+					<div class="form-group field__email">
+						<label class="form-label" for="email">Email</label>
+						<input type="text" id="email" name="email" class="form-input" required>
+					</div>
+
+					<div>
+						<button class="btn btn-primary float-right" data-next>Next</button>
+					</div>
+				</section>
+
+				<section data-step="2">
+					<div class="form-group field__password">
+						<label class="form-label" for="password">Mot de passe</label>
+						<input type="password" id="password" name="password" class="form-input" required>
+					</div>
+					<div class="form-group field__password_confirm">
+						<label class="form-label" for="password_confirm">Confirmer le mot de passe</label>
+						<input type="password" id="password_confirm" name="password_confirm" class="form-input" required>
+					</div>
+					<div>
+						<button class="btn btn-link text-gray" data-prev>Previous</button>
+						<button class="btn btn-primary float-right" data-next>Next</button>
+					</div>
+				</section>
+
+				<section data-step="3">
+					<div class="form-group field__genre">
+						<label class="form-label" for="genre">Sélectionner votre genre</label>
+						<select id="genre" name="genre" class="form-select" required>
+							<option value="" disabled selected>Sélectionner...</option>
+							<option value="1">Male</option>
+							<option value="2">Female</option>
+							<option value="3">Other</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-link text-gray" data-prev>Previous</button>
+						<button class="btn btn-primary float-right" data-next>Next</button>
+					</div>
+				</section>
+			</form>
+			<div id="form-completed" class="form-completed text-center">
+				<p class="text-success">Form successfuly sent !</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<h2>Wizard generated from JS template</h2>
+<form id="zangdar-form-2" class="zangdar-form-2">
+	<div class="field__name">
+		<label for="name1">Nom</label>
+		<input type="text" id="name1" name="name1" required>
+	</div>
+	<div class="field__email">
+		<label for="email1">Email</label>
+		<input type="text" id="email1" name="email1" required>
+	</div>
+	<div class="field__password">
+		<label for="password1">Mot de passe</label>
+		<input type="password" id="password1" name="password1" required>
+	</div>
+	<div class="field__password_confirm">
+		<label for="password_confirm1">Confirmer le mot de passe</label>
+		<input type="password" id="password_confirm1" name="password_confirm1" required>
+	</div>
+	<div class="field__genre">
+		<label for="genre1">Sélectionner votre genre</label>
+		<select id="genre1" name="genre1" required>
+			<option value="" disabled selected>Sélectionner...</option>
+			<option value="1">Male</option>
+			<option value="2">Female</option>
+			<option value="3">Other</option>
+		</select>
+	</div>
+	<button type="submit">Envoyer</button>
+</form>
+
+<script src="../dist/zangdar.min.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+
+		const wizard = new Zangdar('#zangdar-form', {
+		    onStepChange() {
+                const breadcrumb = this.getBreadcrumb()
+                buildSteps(breadcrumb)
+			},
+			onValidation(step, fields, form) {
+                if (step.labeled('2')) {
+                    const err_message = form.querySelector('.error__message')
+					if (err_message) {
+                        err_message.parentNode.removeChild(err_message)
+					}
+					if (fields.password.value !== fields.password_confirm.value) {
+					    const err = document.createElement('p')
+						err.classList.add('error__message')
+						err.innerText = 'Les mots de passe doivent être identiques !'
+                        form.insertBefore(err, form.firstChild)
+					    return false
+					}
+					return true
+                }
+                return true
+			},
+			onSubmit(e) {
+		        e.preventDefault()
+                this.getCurrentStep().active = false
+                this.getCurrentStep().completed = true
+                const breadcrumb = this.getBreadcrumb()
+                buildSteps(breadcrumb)
+				e.target.style.display = 'none'
+				document.getElementById('form-completed').style.display = 'block'
+				return false
+			}
+		})
+
+        const buildBreadcrumb = () => {
+            const breadcrumb = wizard.getBreadcrumb()
+            buildSteps(breadcrumb)
+        }
+
+        const addStep = () => {
+            const stepNumber = wizard.steps.length + 1
+            const html =`<section data-step="step-${stepNumber}">
+				<h2>Step #${stepNumber}</h2>
+				<div>
+					<button class="btn btn-primary float-right" data-next>Next</button>
+				</div>
+			</section>`
+            wizard.getFormElement().innerHTML += html;
+            wizard.refresh()
+            buildBreadcrumb()
+        }
+
+        const removeStep = index => {
+			wizard.removeStep(index)
+            buildBreadcrumb()
+        }
+
+        const buildSteps = steps => {
+            const $steps = document.getElementById('steps')
+
+			// if (document.getElementById('add__step') !== null)
+			// 	document.getElementById('add__step').removeEventListener('click', addStep)
+
+            if (document.getElementById('remove__step') !== null)
+                document.getElementById('remove__step').removeEventListener('click', removeStep)
+
+			$steps.innerHTML = ''
+
+            let $li = document.createElement('li')
+			const $removeBtn = document.createElement('button')
+            $removeBtn.setAttribute('id', 'remove__step')
+            $removeBtn.classList.add('btn', 'btn-error')
+            $removeBtn.addEventListener('click', () => {
+                const index = wizard.steps.length - 1
+				if (index < 3) return
+                removeStep(index)
+            })
+            $removeBtn.innerHTML = '-'
+            $li.appendChild($removeBtn)
+            $steps.appendChild($li)
+
+			for (let label in steps) {
+                if (steps.hasOwnProperty(label)) {
+                    const $li = document.createElement('li')
+                    const $a = document.createElement('a')
+                    $li.classList.add('step-item')
+                    if (steps[label].active) {
+                        $li.classList.add('active')
+                    }
+                    $a.setAttribute('href', '#')
+                    $a.classList.add('tooltip')
+                    $a.dataset.tooltip = label
+                    $a.innerText = label
+                    $a.addEventListener('click', e => {
+                        e.preventDefault()
+                        wizard.revealStep(label)
+                    })
+                    $li.appendChild($a)
+                    $steps.appendChild($li)
+                }
+            }
+
+            $li = document.createElement('li')
+            const $addBtn = document.createElement('button')
+            // $addBtn.setAttribute('id', 'add__step')
+            $addBtn.classList.add('btn', 'btn-primary')
+            $addBtn.addEventListener('click', addStep)
+			$addBtn.innerHTML = '+'
+            $li.appendChild($addBtn)
+            $steps.appendChild($li)
+        }
+
+        buildBreadcrumb()
+
+		const wizard2 = new Zangdar('#zangdar-form-2')
+
+		wizard2.createFromTemplate({
+            'coords': ['.field__name', '.field__email'],
+            'password': ['.field__password', '.field__password_confirm'],
+            'others': ['.field__genre']
+        })
+
+	})
+</script>
+</body>
+</html>

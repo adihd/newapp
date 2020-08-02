@@ -1,0 +1,307 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Better You</title>
+    <!-- vue app -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="assets/css/board_styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A premium admin dashboard template by themesbrand" name="description">
+    <meta content="Themesbrand" name="author">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+    <link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body data-keep-enlarged="true">
+
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+
+        <!-- LOGO -->
+        <div class="topbar-left " style="
+margin-right: 20px;
+">
+            <a href="index.html" class="logo">
+              <!-- <span class="hidden-sm"> -->
+                <span >
+                    <img src="assets/images/logoadipink.jpg" alt="logo-large" class="logo-sm">
+                </span>
+
+
+            </a>
+        </div>
+
+        <nav class="navbar-custom" style="">
+
+            <!-- Search input -->
+
+
+            <ul class="list-unstyled topbar-nav float-right mb-0">
+
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline nav-icon"></i>
+                        <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                        <!-- item-->
+                        <h6 class="dropdown-item-text">
+                            Notifications (258)
+                        </h6>
+                        <div class="slimscroll notification-list">
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Daily Tip is ready:<small class="text-muted">Do it before
+                                        the next time you go to the Bathroom</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">New Message received<small class="text-muted">You have 87
+                                        unread messages</small></p>
+                            </a>
+                            <!-- item-->
+
+
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info"><i class="mdi mdi-martini"></i></div>
+                                <p class="notify-details">Breaking News:<small class="text-muted">Another team just
+                                        passed you!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Teammate did their Task<small class="text-muted">Make
+                                        their 10 points worth 30!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">Message from Teammate:<small class="text-muted">Bro did you
+                                        see we are 2nd now?</small></p>
+                            </a>
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                            View all <i class="fi-arrow-right"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+
+<!-- <span class="ml-1 nav-user-name hidden-sm">Adi <i class="mdi mdi-chevron-down"></i> </span> -->
+                        <span class="ml-1 nav-user-name">Adi <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- end navbar-->
+    </div>
+    <!-- Top Bar End -->
+
+
+    <!-- *Adi.Start Top Bar* -->
+<div class="topbar">
+    <div class="navbar navbar-home">
+        <div class="left">
+            <a href="#menu" class="link menu-link"><i class="icon ion-ios-menu"></i></a>
+        </div>
+        <div class="right">
+            <a href="about-us.html" class="link"><img src="images/square6.jpg" alt=""></a>
+        </div>
+    </div>
+  </div>
+
+    <!-- Adi.Start icon Bar footer -->
+    <div class="icon-bar">
+        <a href="index.html"><i class="fa fa-home"></i></a>
+        <a href="prize.html"><i class="fa fa-trophy"></i></a>
+        <a  href="prog.html"><i class="fa fa-calendar"></i></a>
+        <a class="active" href="game.html"><i class="fa fa-gamepad"></i></a>
+        <a href="Orel.html"><i class="fa fa-birthday-cake"></i></a>
+        <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
+    </div>
+    <!-- Adi.End icon Bar footer-->
+
+
+ <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Page-Title -->
+
+                    <div class="col-sm-12">
+
+                        <br> <br>
+                        <div class="card">
+                            <div class="card-body">
+                                  <!-- Stream video via webcam -->
+                              <div class="video-wrap">
+                                  <video id="video" playsinline autoplay></video>
+                              </div>
+
+                                    <!-- Trigger canvas web API -->
+                                    <div class="controller">
+                                        <button id="snap">Capture</button>
+                                    </div>
+
+                                    <!-- Video Snapshot -->
+                                    <canvas id="canvas" width="640" height="480"></canvas>
+
+                                    <!-- Save Captured Image -->
+                                    <form method="POST" action="upload_image.php">
+                                        
+                                        <button id="save_image" name="save_image" type="submit" value="Submit">Save Image</button>
+                                    </form>
+                                    <script>
+                                        //https://www.youtube.com/watch?v=sL5-FhULalM
+                                        'use strict';
+                                        const video = document.getElementById('video');
+                                        const canvas = document.getElementById('canvas');
+                                        const snap = document.getElementById('snap');
+                                        const errorMsgElement = document.getElementById('spanErrorMsg');
+                                        const constraints = {
+                                            audio: false,
+                                            video: true
+                                        };
+                                        async function init(){
+                                            try{
+                                                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                                                handleSuccess(stream);
+                                            }
+                                            catch(e){
+                                                errorMsgElement.innerHTML = `navigator.getUserMedia.error:${e.toString()}`;
+                                            }
+                                        }
+                                        // Success
+                                        function handleSuccess(stream){
+                                            window.stream = stream;
+                                            video.srcObject = stream;
+                                        }
+                                        //Initialise
+                                        init();
+                                        //Draw Image
+                                        let context = canvas.getContext('2d');
+                                        snap.addEventListener("click", function(){
+                                            context.drawImage(video, 0, 0, 320, 480);
+                                            const myCanvas = document.querySelector("#canvas");
+                                            const dataURI = myCanvas.toDataURL();
+                                            document.getElementById("image_URI").value = dataURI;
+                                        });
+
+                                    </script>
+
+                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- container -->
+
+                    
+                </div>
+                <!-- end page content -->
+            </div>
+            <!-- end page-wrapper -->
+
+
+
+
+    
+
+
+            <!-- jQuery  -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/waves.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+            <!--Plugins-->
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <script src="assets/plugins/morris/morris.min.js"></script>
+            <script src="assets/plugins/raphael/raphael-min.js"></script>
+            <script src="assets/plugins/metro/MetroJs.min.js"></script>
+            <script src="assets/plugins/jquery-knob/excanvas.js"></script>
+            <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+            <script src="assets/pages/jquery.dashboard.init.js"></script>
+            <!-- App js -->
+            <script src="assets/js/app.js"></script>
+
+
+            <!-- firestore -->
+            <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBuxljj3k7r0t0z25hE6NI24phqi3SRQcQ",
+    authDomain: "betteryou-fa31f.firebaseapp.com",
+    databaseURL: "https://betteryou-fa31f.firebaseio.com",
+    projectId: "betteryou-fa31f",
+    storageBucket: "betteryou-fa31f.appspot.com",
+    messagingSenderId: "657483400525",
+    appId: "1:657483400525:web:4645fec7934e7e9b02a304",
+    measurementId: "G-4J1G4ZPLJ5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore();
+  </script>
+
+    <!--Plugins-->
+    <script src="assets/js/board.js"></script>
+            
+
+</body>
+
+</html>

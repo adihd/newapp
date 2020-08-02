@@ -1,0 +1,374 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Better You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="A premium admin dashboard template by themesbrand" name="description">
+	<meta content="Themesbrand" name="author">
+
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Material design icons CSS -->
+	<link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/emmet/2.1.1/emmet.cjs.js">
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0-beta.14/vue.min.js">
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+	</script>
+	<!-- SweetAlert2 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js">
+
+	</script>
+
+
+	<!--Morris Chart CSS -->
+	<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+	<link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
+
+	<!-- App css -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- emojitwitwer -->
+	<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous">
+
+	</script>
+
+	<!-- tippy -->
+	<button data-tippy-content="Tooltip">Text</button>
+<button data-tippy-content="Another Tooltip">Text</button>
+
+
+</head>
+
+<body data-keep-enlarged="true">
+
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+
+        <!-- LOGO -->
+        <div class="topbar-left " style="
+margin-right: 20px;
+">
+            <a href="index.html" class="logo">
+              <!-- <span class="hidden-sm"> -->
+                <span >
+                    <img src="assets/images/logoadipink.jpg" alt="logo-large" class="logo-sm">
+                </span>
+
+
+            </a>
+        </div>
+
+        <nav class="navbar-custom" style="">
+
+            <!-- Search input -->
+
+
+            <ul class="list-unstyled topbar-nav float-right mb-0">
+
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline nav-icon"></i>
+                        <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                        <!-- item-->
+                        <h6 class="dropdown-item-text">
+                            Notifications (258)
+                        </h6>
+                        <div class="slimscroll notification-list">
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Daily Tip is ready:<small class="text-muted">Do it before
+                                        the next time you go to the Bathroom</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">New Message received<small class="text-muted">You have 87
+                                        unread messages</small></p>
+                            </a>
+                            <!-- item-->
+
+
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info"><i class="mdi mdi-martini"></i></div>
+                                <p class="notify-details">Breaking News:<small class="text-muted">Another team just
+                                        passed you!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Teammate did their Task<small class="text-muted">Make
+                                        their 10 points worth 30!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">Message from Teammate:<small class="text-muted">Bro did you
+                                        see we are 2nd now?</small></p>
+                            </a>
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                            View all <i class="fi-arrow-right"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+
+<!-- <span class="ml-1 nav-user-name hidden-sm">Adi <i class="mdi mdi-chevron-down"></i> </span> -->
+                        <span class="ml-1 nav-user-name">Adi <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- end navbar-->
+    </div>
+    <!-- Top Bar End -->
+    <!-- header ends -->
+
+
+    <!-- Adi.Start icon Bar footer -->
+    <div class="icon-bar">
+        <a class="active" href="forms.html"><i class="fa fa-home"></i></a>
+        <a href="prize-tom.html"><i class="fa fa-trophy"></i></a>
+        <a href="prog.html"><i class="fa fa-calendar"></i></a>
+        <a href="game.html"><i class="fa fa-gamepad"></i></a>
+        <a href="Orel.html"><i class="fa fa-birthday-cake"></i></a>
+        <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
+    </div>
+    <!-- Adi.End icon Bar footer-->
+
+
+    <!-- Page page-wrapper-->
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+            <!-- Page fluid-->
+            <div class="container-fluid">
+                <!-- 4 card  -->
+                <div class="row text-center mt-4">
+                  <div class="col-12 col-md-6">
+                    <div class="card shadow border-0 mb-3" >
+                  <h1 id="myHeader"></h1>
+                  <!-- <h1>Your team has 328 points</h1> -->
+                  </div>
+                  </div>
+                  </div>
+                <div class="row text-center mt-4">
+                    <div class="col-6 col-md-3">
+                      <h1 id="partner_id">👧 Orel </h1>
+                        <div class="card shadow border-0 mb-3" style="background-color: #EC87C0;">
+                            <div class="card-body">
+                                <div class="avatar avatar-60 no-shadow border-0">
+                                    <div class="overlay bg-template"></div>
+
+                                </div>
+                                <!-- popover button!!!!!!!!!! -->
+                                
+                                <button id="success" class="btn btn-primary text-light " type="button">
+                                    click to remind Orel to do her habit
+                                </button>
+
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <h1>🦄 Me </h1>
+                        <div class="card shadow border-0 mb-3"style="background-color: #EC87C0;">
+                            <div class="card-body">
+                                <div class="avatar avatar-60 no-shadow border-0">
+                                    <div class="overlay bg-template"></div>
+                                </div>
+                                
+                                <button class="btn btn-primary text-light collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    click if you did your habit
+                                </button>
+                                <!-- toggle data!!!!!!!!!!!!!!!!!! -->
+
+                                <div class="collapse" id="collapseExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-4 font-13">
+                                            רוצה להעלות תמונה או פשוט לסמן?
+                                        </p>
+                                        <div class="button-list btn-social-icon">
+                                            <button type="button" class="btn btn-facebook">
+                                                <i class="fab fa-facebook"></i>
+                                            </button>
+
+                                          
+
+                                           
+                                        <!-- tom -->
+                                        <form class="form-inline"><input type="checkbox" id="switch3" switch="bool" onclick="if(this.checked){markAsDone()}"> <label for="switch3" data-on-label="Yes" data-off-label="No" style="padding-left: 20px; margin-left: 20px;"></label></form>
+
+                    
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                                <!-- toggle data!!!!!!!!!!!!!!!!!! -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- my div -->
+
+                    <!-- my partner div -->
+
+                </div>
+                <!--  2 card -->
+
+                <!-- fsdfsd -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="mt-0">HTML</h5>
+                                    <p class="text-muted font-13 mb-4">Tooltips can contain HTML, allowing you to craft awesome interactive popovers.</p>
+                                    <div class="" >
+                                        <button class="btn btn-sm btn-primary tippy-btn" id="myElement" data-tippy-interactive="true" data-tippy-theme="light rounded" data-tippy-arrow="true" data-tippy-size="large" data-tippy-arrowTransform="scale(2)" data-tippy-animation="fade" data-tippy-distance="15" data-tippy-interactiveBorder="20" data-local>HTML Templates</button>
+                                        <div id="feature__html" data-template>
+                                            <div style="padding:20px"><img width="50" src="assets/images/logo-sm-dark.png" alt="" />
+                                                <h5>Look! The Amezia logo is inside a <strong>AMEZIA</strong>.</h5>
+                                                <button class="btn btn-sm btn-primary tippy-btn" data-close>Close</button>
+                                            </div>
+                                        </div>                                               
+                                    </div>
+                                </div>
+                            </div>
+
+                <!-- asf -->
+
+            </div>
+            <!-- Page fluid-->
+        </div>
+        <!-- Page Content-->
+    </div>
+    <!-- Page page-wrapper-->
+
+
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!--Plugins-->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+    <script src="assets/plugins/metro/MetroJs.min.js"></script>
+    <script src="assets/plugins/jquery-knob/excanvas.js"></script>
+    <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="assets/pages/jquery.dashboard.init.js"></script>
+
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+        <script src="assets/plugins/tippy/tippy.all.min.js"></script> 
+        <script src="assets/pages/jquery.tooltipster.js"></script>
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-functions.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB2Au2vtXQIyKSjOgek0kaZAjsM3vXcxJY",
+    authDomain: "betteryou1-1c7a4.firebaseapp.com",
+    databaseURL: "https://betteryou1-1c7a4.firebaseio.com",
+    projectId: "betteryou1-1c7a4",
+    storageBucket: "betteryou1-1c7a4.appspot.com",
+    messagingSenderId: "356574666550",
+    appId: "1:356574666550:web:a7330d9fd93f29bd135d97",
+    measurementId: "G-9CW47VHDH4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+    const db = firebase.firestore();
+    const functions = firebase.functions();
+</script>
+
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script src="scripts/points.js"></script>
+    <!-- <script src="scripts/prize.js"></script> -->
+
+    <script>
+      // popover
+        $(function () {
+            // Enables popover
+            $("[data-toggle=popover]").popover();
+        });
+
+// Alert Modal Type
+		$(document).on('click', '#success', function(e) {
+			swal(
+				'Success',
+				'You just <b style="color:green;">Poked</b> your partner!!!',
+				'success'
+        // now make the button in another color!
+			)
+		});
+    </script>
+    
+    <script>
+      // popover
+        $(function () {
+            // Enables popover
+            $("[data-toggle=popover]").popover();
+        });
+
+// Alert Modal Type
+		$(document).on('click', '#complete', function(e) {
+			swal(
+				'Success',
+				'You just updated your daily task status to <b style="color:green;">Complete</b> !!!',
+				'success'
+        // now make the button in another color!
+			)
+		});
+
+
+    </script>
+</body>
+
+</html>

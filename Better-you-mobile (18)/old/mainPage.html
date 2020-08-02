@@ -1,0 +1,454 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Better You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="A premium admin dashboard template by themesbrand" name="description">
+	<meta content="Themesbrand" name="author">
+
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!--Morris Chart CSS -->
+	<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+	<link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
+
+	<!-- App css -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body data-keep-enlarged="true">
+
+	<!-- Top Bar Start -->
+	<div class="topbar">
+
+		<!-- LOGO -->
+		<div class="topbar-left">
+			<a href="index.html" class="logo">
+				<span class="hidden-sm">
+                    <img src="assets/images/logotxt.png" alt="logo-large" class="logo-sm">
+                </span>
+
+                
+            </a>
+        </div>
+
+                <nav class="navbar-custom" style="">
+
+            <!-- Search input -->
+            <div class="search-wrap" id="search-wrap">
+                <div class="search-bar">
+                    <input class="search-input" type="search" placeholder="Search here..">
+                    <a href="javascript:void(0);" class="close-search search-btn" data-target="#search-wrap">
+                        <i class="mdi mdi-close-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="list-unstyled topbar-nav float-right mb-0">
+                <li>
+                    <a class="nav-link waves-effect waves-light search-btn" href="javascript:void(0);" data-target="#search-wrap">
+                        <i class="mdi mdi-magnify nav-icon"></i>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline nav-icon"></i>
+                        <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                        <!-- item-->
+                        <h6 class="dropdown-item-text">
+                            Notifications (258)
+                        </h6>
+                        <div class="slimscroll notification-list">
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Daily Tip is ready:<small class="text-muted">Do it before the next time you go to the Bathroom</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">New Message received<small class="text-muted">You have 87
+                                        unread messages</small></p>
+                            </a>
+                            <!-- item-->
+                       
+                       
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info"><i class="mdi mdi-martini"></i></div>
+                                <p class="notify-details">Breaking News:<small class="text-muted">Another team just passed you!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Teammate did their Task<small class="text-muted">Make their 10 points worth 30!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">Message from Teammate:<small class="text-muted">Bro did you see we are 2nd now?</small></p>
+                            </a>
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                            View all <i class="fi-arrow-right"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/users/user-1.jpg" alt="profile-user" class="rounded-circle">
+                        <span class="ml-1 nav-user-name hidden-sm">Adi <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled topbar-nav mb-0">
+                <!-- todo need to make this collapse -->
+
+
+                
+                                <li>
+                  
+                  <a class="nav-link" href="home.html"><i class="mdi mdi-home nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="home.html">
+                      Home
+                    </a>
+                </li>
+                <li>
+                                    <a class="nav-link" href="home.html"><i class="mdi mdi-gamepad-variant nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="feed.html">
+                        Feed
+                    </a>
+                </li>
+                                <li>
+<a class="nav-link" href="home.html"><i class="mdi mdi-emoticon-cool nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="partners.html">
+                        Buddies
+                    </a>
+            </li></ul>
+        </nav>
+        <!-- end navbar-->
+    </div>
+    <!-- Top Bar End -->
+
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Page-Title -->
+
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="float-right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end page title end breadcrumb -->
+
+                <!-- strat row1 -->
+                <div class="row">
+                  <div class="col-md-5 col-xl-3">
+                    <div class="card">
+                          <div class="card-body">
+                              <div>
+                                <div class="row justify-content-center">
+                                <h4 class="mt-0">Days Left To Challenge</h4>
+                                  <h3 class="text-primary pt-2" id="countdown"></h3>
+                                </div>
+                              </div>
+                                                   
+                          </div>
+                        </div>
+                        <div class="card">
+                                <div class="card-body">
+    
+                                    <h5 class="mt-0">Daily Picture</h5>
+                                    <p class="text-muted  font-13 mb-4">upload your picture from todays practice
+                                    </p>
+    
+                                    <div class="mb-4">
+                                        <form action="#" class="dropzone dz-clickable">
+                                            
+                                        <div class="dz-default dz-message"><span>we can write here something</span></div></form>
+                                    </div>
+
+                                     <div class="mb-4">
+                                        <form action="#" class="dropzone dz-clickable">
+                                            
+                                        <div class="dz-default dz-message"><span>we can write here something</span></div></form>
+                                    </div>
+    
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-primary waves-effect waves-light">UPLOAD</button>
+                                    </div>
+    
+                                </div>
+                            </div>
+                      </div>
+                     
+                    <!-- </div> -->
+                    <div class="col-md-12 col-lg-8 col-xl-6">
+
+                        <div class="card">
+                            <div class="card-body">
+                                
+                            
+<!-- <div class="col-md-8 bootstrap snippets"> -->
+<div class="panel">
+  <div class="panel-body">
+    <input class="form-control" rows="2" placeholder="What are you thinking?"></input>
+    <br>
+    <div class="mar-top clearfix">
+      <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
+      <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+      <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
+      <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="panel">
+    <div class="panel-body">
+    <!-- Newsfeed Content -->
+    <!--===================================================-->
+    <div class="media-block">
+      <a class="media-left" href="#"></a>
+      <div class="media-body">
+        <div class="mar-btm">
+          <a href="#" class="btn-link text-semibold media-heading box-inline">Lisa D.</a>
+          <p class="text-muted text-sm"> 11 min ago</p>
+        </div>
+        <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        <div class="pad-ver">
+          <div class="btn-group">
+            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+          </div>
+          <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+        </div>
+        <hr>
+
+        <!-- Comments -->
+        <div>
+          <div class="media-block">
+            <a class="media-left" href="#"></a>
+            <div class="media-body">
+              <div class="mar-btm">
+                <a href="#" class="btn-link text-semibold media-heading box-inline">Bobby Marz</a>
+                <p class="text-muted text-sm">  7 min ago</p>
+              </div>
+              <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+              <div class="pad-ver">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-default btn-hover-success active" href="#"><i class="fa fa-thumbs-up"></i> You Like it</a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                </div>
+                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+              </div>
+              <hr>
+            </div>
+          </div>
+
+          <div class="media-block">
+            <a class="media-left" href="#">
+            </a>
+            <div class="media-body">
+              <div class="mar-btm">
+                <a href="#" class="btn-link text-semibold media-heading box-inline">Lucy Moon</a>
+                <p class="text-muted text-sm"> 2 min ago</p>
+              </div>
+              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
+              <div class="pad-ver">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                </div>
+                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+
+
+    <!-- Newsfeed Content -->
+    <!--===================================================-->
+    <div class="media-block pad-all">
+      <a class="media-left" href="#"></a>
+      <div class="media-body">
+        <div class="mar-btm">
+          <a href="#" class="btn-link text-semibold media-heading box-inline">John Doe</a>
+          <p class="text-muted text-sm">  11 min ago</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div class="pad-ver">
+          <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
+          <div class="btn-group">
+            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+          </div>
+          <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+        </div>
+        <hr>
+
+        <!-- Comments -->
+        <div>
+          <div class="media-block pad-all">
+            <a class="media-left" href="#"></a>
+            <div class="media-body">
+              <div class="mar-btm">
+                <a href="#" class="btn-link text-semibold media-heading box-inline">Maria Leanz</a>
+                <p class="text-muted text-sm"> 2 min ago</p>
+              </div>
+              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
+              <div>
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                </div>
+                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+  </div>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                      
+                         <div class="card">
+                            <img class="card-img-top img-fluid" src="assets/images/adi_grid_1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title mt-0 text-success">Uncover the image
+                                </h4>
+                                <p class="card-text text-muted font-13"></p>
+                            </div>
+                        </div>
+                        <br> <br>
+                <div class="card">
+                            <div class="card-body">
+                                
+                                <div class="text-center">
+                                    <img src="assets/images/pizza.jpeg" alt="" class="thumb-xl rounded-circle mr-1">
+                                    <br>
+                                    <br>
+                                    <h4 class="card-title mt-0 text-success">The big prize - Pizza Night :)</h4>
+                                    
+
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mb-0">
+                                            <img src="assets/images/Star.png" alt="" class="thumb-sm mr-1">
+                                            <span><strong>Orel &amp; nitai</strong></span>
+                                        </div> 
+                                        <small class="float-right text-muted ml-3 font-14">699</small>
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 78%; border-radius:5px;" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="mb-0">
+                                            <img src="assets/images/Star.png" alt="" class="thumb-sm mr-1">
+                                            <span><strong>Adi &amp; Hadar</strong></span>
+                                        </div>
+                                        <small class="float-right text-muted ml-3 font-14">615</small>
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 60%; border-radius:5px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="mb-0">
+                                           <img src="assets/images/Star.png" alt="" class="thumb-sm mr-1">
+                                            <span><strong>Tom &amp; Aviv</strong></span>
+                                        </div>
+                                        <small class="float-right text-muted ml-3 font-14">532</small>
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 45%; border-radius:5px;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="mb-0">
+                                          <img src="assets/images/poop.png" alt="" class="thumb-sm mr-1">
+                                            <span><strong>Omer &amp; Maya</strong></span>
+                                        </div>
+                                        <small class="float-right text-muted ml-3 font-14">479</small>
+                                        <div class="progress mt-2  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 30%; border-radius:5px;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+            </div><!-- container -->
+
+<footer class="footer text-center text-sm-left tempdiv">
+                © 2020 Better You <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> </span>
+            </footer>
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!--Plugins-->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+    <script src="assets/plugins/metro/MetroJs.min.js"></script>
+    <script src="assets/plugins/jquery-knob/excanvas.js"></script>
+    <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="assets/pages/jquery.dashboard.init.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+
+
+
+
+</body></html>

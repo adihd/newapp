@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Better You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A premium admin dashboard template by themesbrand" name="description">
+    <meta content="Themesbrand" name="author">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+    <link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/ribbon.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <br>
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <div id="top" style=" margin-top: 20px; margin-bottom: 50px;">
+                    <header class="ribbon-container">
+                        <!-- <h1>The Windhover</h1> -->
+                        <h2 class="ribbon">
+                            <div class="countdown">
+
+                                <a class="ribbon-content">
+                                    <h4>Welcome to <span id="challengename" style="color:pink;"></span> challenge
+                                    </h4>
+                                    
+                                </a>
+                                <!-- <h3 id="myHeader"></h3> -->
+                        </h2>
+                    </header>
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="mt-0">The buddy system</h5>
+
+                    <!-- <p class="text-muted font-13 mb-4">sdsdfsdfsdfsdfsdfsdfsdfsdfsdf sdfsdfsdf sdfsdfsdf sdfsdfsdf sdfsdfsdf sdfsdf sdfsdfdfdsf sdfdsfsfd </p> -->
+                    <h4 id="demo"></h4>
+
+                  <table class="table mb-2">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Player1</th>
+                            <th>Player2</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbl">
+
+                    </tbody>
+                </table>
+
+
+                    
+            </div>
+
+        </div>
+
+        <!-- end page-wrapper -->
+
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-functions.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB2Au2vtXQIyKSjOgek0kaZAjsM3vXcxJY",
+                authDomain: "betteryou1-1c7a4.firebaseapp.com",
+                databaseURL: "https://betteryou1-1c7a4.firebaseio.com",
+                projectId: "betteryou1-1c7a4",
+                storageBucket: "betteryou1-1c7a4.appspot.com",
+                messagingSenderId: "356574666550",
+                appId: "1:356574666550:web:a7330d9fd93f29bd135d97",
+                measurementId: "G-9CW47VHDH4"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+            const functions = firebase.functions();
+        </script>
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.min.js"></script>
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+        <!--Plugins-->
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script src="assets/plugins/morris/morris.min.js"></script>
+        <script src="assets/plugins/raphael/raphael-min.js"></script>
+        <script src="assets/plugins/metro/MetroJs.min.js"></script>
+        <script src="assets/plugins/jquery-knob/excanvas.js"></script>
+        <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+        <script src="assets/pages/jquery.dashboard.init.js"></script>
+        <!-- App js -->
+        <!-- <script src="assets/js/app.js"></script> -->
+        <script src="scripts/auth.js"></script>
+        <script src="scripts/start_game.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>

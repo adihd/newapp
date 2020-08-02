@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Better You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="A premium admin dashboard template by themesbrand" name="description">
+	<meta content="Themesbrand" name="author">
+
+
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- App css -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="stylesheet" href="assets/plugins/jquery-steps/jquery.steps.css">
+
+	<!--Morris Chart CSS -->
+	<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+	<link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
+
+	<!-- App css -->
+	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.css">
+	<link href="assets/css/feed2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body data-keep-enlarged="true">
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+
+        <!-- LOGO -->
+        <div class="topbar-left">
+            <a href="index.html" class="logo">
+                    <span class="hidden-sm">
+                    <img src="assets/images/logotxt.png" alt="logo-large" class="logo-sm">
+                </span>
+
+                
+            </a>
+        </div>
+
+                <nav class="navbar-custom" style="">
+
+            <!-- Search input -->
+            <div class="search-wrap" id="search-wrap">
+                <div class="search-bar">
+                    <input class="search-input" type="search" placeholder="Search here..">
+                    <a href="javascript:void(0);" class="close-search search-btn" data-target="#search-wrap">
+                        <i class="mdi mdi-close-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="list-unstyled topbar-nav float-right mb-0">
+                <li>
+                    <a class="nav-link waves-effect waves-light search-btn" href="javascript:void(0);" data-target="#search-wrap">
+                        <i class="mdi mdi-magnify nav-icon"></i>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline nav-icon"></i>
+                        <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                        <!-- item-->
+                        <h6 class="dropdown-item-text">
+                            Notifications (258)
+                        </h6>
+                        <div class="slimscroll notification-list">
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Daily Tip is ready:<small class="text-muted">Do it before the next time you go to the Bathroom</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">New Message received<small class="text-muted">You have 87
+                                        unread messages</small></p>
+                            </a>
+                            <!-- item-->
+                       
+                       
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info"><i class="mdi mdi-martini"></i></div>
+                                <p class="notify-details">Breaking News:<small class="text-muted">Another team just passed you!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Teammate did their Task<small class="text-muted">Make their 10 points worth 30!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">Message from Teammate:<small class="text-muted">Bro did you see we are 2nd now?</small></p>
+                            </a>
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                            View all <i class="fi-arrow-right"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/users/user-1.jpg" alt="profile-user" class="rounded-circle">
+                        <span class="ml-1 nav-user-name hidden-sm">Adi <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled topbar-nav mb-0">
+                <!-- todo need to make this collapse -->
+
+
+                
+                                <li>
+                  <a class="nav-link" href="home2.html"><i class="mdi mdi-home nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="home2.html" >
+                      Home
+                    </a>
+                </li>
+                <li>
+                                    <a class="nav-link" href="home2.html"><i class="mdi mdi-gamepad-variant nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="feed.html" >
+                        Feed
+                    </a>
+                </li>
+                                <li>
+<a class="nav-link" href="home.html"><i class="mdi mdi-emoticon-cool nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="partners.html" >
+                        Buddies
+                    </a>
+            </li></ul>
+        </nav>
+        <!-- end navbar-->
+    </div>
+    <!-- Top Bar End -->
+
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+
+                <div class="container-fluid">
+
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title">Feed</h4>
+                            </div>
+                        </div>
+                    </div><!-- End row -->
+                    <!-- end page title end breadcrumb -->
+                   
+                       
+    <div class="row">
+                    <div class="col-md-12 col-lg-6 col-xl-4">
+                        <div class="card">
+                            <div class="card-body">
+                                
+                                <div class="text-center"> 
+                                    <h4 class="">Today's Status :)</h4>
+                                    
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                     <div class="mb-0">
+                                            <img src="assets/images/selfie-reading.jpeg" alt="" class="thumb-md rounded-circle mr-1">
+                                            <span><strong>nitai</strong></span>
+                                             <span>   <img class="thumb-sm float-right" src="assets/images/Star.png"> 
+                                            
+                                           </span>
+                                        </div>
+                                        
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            
+                                        </div>
+                                        
+                                        <div class="mb-0">
+                                            <img id="theImage" src="assets/images/waiting.png" alt="" class="thumb-md rounded-circle mr-1">
+                                            <span><strong>Adi</strong></span>
+
+                                             <span>   <img id="ImageThePoop" class="thumb-sm float-right" src="assets/images/poop.png"> 
+                                            
+                                            </span>
+                                        </div>
+                                      
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            
+                                        </div>
+                                        <div class="mb-0">
+                                            <img src="assets/images/read.jpeg" alt="" class="thumb-md rounded-circle mr-1">
+                                            <span><strong>Tom</strong></span>
+                                            <span>   <img class="thumb-sm float-right" src="assets/images/Star.png"> 
+                                            
+                                           </span>
+                                        </div>
+                                      
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                          
+                                        </div>
+                                        <div class="mb-0">
+                                            <img  src="assets/images/drawing2.jpeg" alt="" class="thumb-md rounded-circle mr-1">
+                                            
+                                            <span><strong>Orel</strong></span>
+                                                <span>   <img class="thumb-sm float-right" src="assets/images/Star.png"> 
+                                            
+                                           </span>
+                                            
+                                        </div>
+                                      
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                        </div>
+                                        <div class="mb-0">
+                                            <img src="assets/images/selfie-reading1.jpeg" alt="" class="thumb-md rounded-circle mr-1">
+                                            <span><strong>Omer</strong></span>
+                                             <span>   <img class="thumb-sm float-right" src="assets/images/Star.png"> 
+                                            
+                                           </span>
+                                        </div>
+                                        
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                        </div>
+                                        <div class="mb-0">
+                                            <img src="assets/images/drawing1.jpeg" alt="" class="thumb-md rounded-circle mr-1">
+                                            <span><strong>Maya</strong></span>
+                                             <span>   <img class="thumb-sm float-right" src="assets/images/Star.png"> 
+                                            
+                                           </span>
+                                        </div>
+                                        
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                        </div>
+                                        <div class="mb-0">
+                                            <img src="assets/images/kniting-man.jpeg" alt="" class="thumb-md rounded-circle mr-1">
+                                            <span><strong>Aviv</strong></span>
+                                             <span>   <img class="thumb-sm float-right" src="assets/images/Star.png"> 
+                                            
+                                           </span>
+                                        </div>
+                                     
+                                        <div class="progress mt-2  bg-white" style="height:6px;">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                               <div class="card">
+                         <div class="card-body">            
+                                    <h5 class="mt-0">Daily Picture</h5>           
+                                    <p>
+                                        <a class="btn btn-primary text-white mo-mb-2" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            take a picture
+                                        </a>
+                                        <button class="btn btn-primary text-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="theButton"  onclick="pictureChange()" value="click me!" >
+                                            Submit
+                                        </button>
+                                    <div class="collapse" id="collapseExample">
+                                     
+                                     
+                                        <div class="card card-body mb-0  text-muted font-13">
+                                          <img src="assets/images/adi-selfie.png" class="img-fluid" alt="Responsive image">
+                                        </div>
+                                    </div>            
+                                </div>
+                               </div>
+                    </div>
+                    <div class="col-md-6 col-xl-8">
+                    <div class="card">
+                      <div class="card-body">
+                      <div class="container">
+                          <div class="chat">
+    
+      <div class="chat-history">
+        <ul  class="list-unstyled">
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name" >Adi</span> <i class="fa fa-circle me"></i>
+              
+            </div>
+            <div class="message other-message float-right">
+              Hi Omer, how are you? How is the project coming along?
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Omer</span>
+              <span class="message-data-time">10:12 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Are we meeting today? Project has been already finished and I have results to show you.
+            </div>
+          </li>
+          
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name" >Adi</span> <i class="fa fa-circle me"></i>
+              
+            </div>
+            <div class="message other-message float-right">
+              Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project?
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Orel</span>
+              <span class="message-data-time">10:20 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Actually everything was fine. I'm very excited to show this to our team.
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Orel</span>
+              <span class="message-data-time">10:31 AM, Today</span>
+            </div>
+            <i class="fa fa-circle online"></i>
+            <i class="fa fa-circle online" style="color: #AED2A6"></i>
+            <i class="fa fa-circle online" style="color:#DAE9DA"></i>
+          </li>
+          
+        </ul>
+        
+      </div> <!-- end chat-history -->
+      
+      <div class="chat-message clearfix">
+        <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+        
+        <button>Send</button>
+
+      </div> <!-- end chat-message -->
+    </div> 
+    
+    <!-- end chat -->
+                   </div>
+                      </div>
+          </div>
+
+        </div><!-- container -->
+        
+                </div><!-- container -->
+
+                <footer class="footer text-center text-sm-left tempdiv">
+                © 2020 Better You <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> </span>
+            </footer>
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.min.js"></script>
+       
+
+        <!-- App js -->
+        <script src="assets/js/app.js"></script>
+ 
+  
+
+    <!--Plugins-->
+    <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+    <script src="assets/plugins/metro/MetroJs.min.js"></script>
+    <script src="assets/plugins/jquery-knob/excanvas.js"></script>
+    <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="assets/pages/jquery.dashboard.init.js"></script>
+    
+    <script src="assets/plugins/dropzone/dist/dropzone.js"></script>
+    <script src="assets/plugins/dropify/js/dropify.min.js"></script>
+    <script src="assets/pages/jquery.dropzone.init.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+
+  
+  
+   
+  
+    <script src="assets/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="assets/pages/jquery.form-wizard.init.js"></script>
+      
+
+    
+      
+    
+    <!-- App js -->
+    
+    <script src="assets/js/feed2.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script id="message-template" type="text/x-handlebars-template">
+  <li class="clearfix">
+    <div class="message-data align-right">
+      <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
+      <span class="message-data-name" >Adi</span> <i class="fa fa-circle me"></i>
+    </div>
+    <div class="message other-message float-right">
+      {{messageOutput}}
+    </div>
+  </li>
+</script>
+
+
+
+<script id="message-response-template" type="text/x-handlebars-template">
+  <li>
+    <div class="message-data">
+      <span class="message-data-name"><i class="fa fa-circle online"></i> nitai</span>
+      <span class="message-data-time">{{time}}, Today</span>
+    </div>
+    <div class="message my-message">
+      {{response}}
+    </div>
+  </li>
+</script>
+
+    </body>
+</html>

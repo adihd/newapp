@@ -1,0 +1,359 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>BetterYou</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A premium admin dashboard template by themesbrand" name="description">
+    <meta content="Themesbrand" name="author">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+    <link href="assets/plugins/metro/MetroJs.min.css" rel="stylesheet">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-keep-enlarged="true">
+
+    <!-- Top Bar Start -->
+   <div class="topbar">
+
+        <!-- LOGO -->
+        <div class="topbar-left " style="
+    margin-right: 20px;
+">
+            <a href="index.html" class="logo">
+                    <span class="hidden-sm">
+                    <img src="assets/images/logoadipink.jpg" alt="logo-large" class="logo-sm">
+                </span>
+
+                
+            </a>
+        </div>
+
+                <nav class="navbar-custom" style="">
+
+            <!-- Search input -->
+            <div class="search-wrap" id="search-wrap">
+                <div class="search-bar">
+                    <input class="search-input" type="search" placeholder="Search here..">
+                    <a href="javascript:void(0);" class="close-search search-btn" data-target="#search-wrap">
+                        <i class="mdi mdi-close-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="list-unstyled topbar-nav float-right mb-0">
+                <li>
+                    <a class="nav-link waves-effect waves-light search-btn" href="javascript:void(0);" data-target="#search-wrap">
+                        <i class="mdi mdi-magnify nav-icon"></i>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline nav-icon"></i>
+                        <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                        <!-- item-->
+                        <h6 class="dropdown-item-text">
+                            Notifications (258)
+                        </h6>
+                        <div class="slimscroll notification-list">
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Daily Tip is ready:<small class="text-muted">Do it before the next time you go to the Bathroom</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">New Message received<small class="text-muted">You have 87
+                                        unread messages</small></p>
+                            </a>
+                            <!-- item-->
+                       
+                       
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info"><i class="mdi mdi-martini"></i></div>
+                                <p class="notify-details">Breaking News:<small class="text-muted">Another team just passed you!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details">Your Teammate did their Task<small class="text-muted">Make their 10 points worth 30!</small></p>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details">Message from Teammate:<small class="text-muted">Bro did you see we are 2nd now?</small></p>
+                            </a>
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                            View all <i class="fi-arrow-right"></i>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        
+                        <span class="ml-1 nav-user-name hidden-sm">Adi <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled topbar-nav mb-0">
+                <!-- todo need to make this collapse -->
+
+
+                
+                                <li>
+                  <a class="nav-link" href="home.html"><i class="mdi mdi-home nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="home.html">
+                      Home
+                    </a>
+                </li>
+                <li>
+                                    <a class="nav-link" href="home.html"><i class="mdi mdi-gamepad-variant nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="feed.html">
+                        Feed
+                    </a>
+                </li>
+                                <li>
+<a class="nav-link" href="home.html"><i class="mdi mdi-emoticon-cool nav-icon"></i></a>
+                </li>
+                <li class="hidden-sm">
+                    <a class="nav-link waves-effect waves-light" href="partners.html">
+                        Buddies
+                    </a>
+            </li></ul>
+        </nav>
+        <!-- end navbar-->
+    </div>
+    <!-- Top Bar End -->
+
+
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+          
+
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Page-Title -->
+
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="float-right">
+                            </div>
+                            <!-- <h1 class="page-title">Good Luck!</h1> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end page title end breadcrumb -->
+
+                <!-- strat row1 -->
+<div class="row">
+                  <div class="col-md-12 col-lg-6 col-xl-4">
+
+                        <div class="card">
+                            <div class="card-body">
+                                
+                                <div class="text-center">
+                                    <img src="assets/images/pizza.jpeg" alt="" class="thumb-xl rounded-circle mr-1">
+                                    <br>
+                                    <br>
+                                    <h4 class="card-title mt-0 text-success">The big prize - Pizza Night :)</h4>
+                                    
+
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mb-0">
+                                            <img src="assets/images/project-logo/project1.jpg" alt="" class="thumb-sm rounded-circle mr-1">
+                                            <span><strong>Orel &amp; Nitai</strong></span>
+                                        </div>
+                                        <small class="float-right text-muted ml-3 font-14">699</small>
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 78%; border-radius:5px;" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div id="app2">
+                                        <div class="mb-0">
+                                            <img src="assets/images/project-logo/project2.jpg" alt="" class="thumb-sm rounded-circle mr-1">
+                                            <span><strong>Adi &amp; Hadar</strong></span>
+                                        </div>
+                                        <small class="float-right text-muted ml-3 font-14">{{points}}</small>
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 60%; border-radius:5px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        </div>
+                                        <div class="mb-0">
+                                            <img src="assets/images/project-logo/project3.jpg" alt="" class="thumb-sm rounded-circle mr-1">
+                                            <span><strong>Tom &amp; Aviv</strong></span>
+                                        </div>
+                                        <small class="float-right text-muted ml-3 font-14">532</small>
+                                        <div class="progress mt-2 mb-4  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 45%; border-radius:5px;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="mb-0">
+                                            <img src="assets/images/project-logo/project4.jpg" alt="" class="thumb-sm rounded-circle mr-1">
+                                            <span><strong>Omer &amp; Maya</strong></span>
+                                        </div>
+                                        <small class="float-right text-muted ml-3 font-14">479</small>
+                                        <div class="progress mt-2  bg-white" style="height:6px;">
+                                            <div class="progress-bar bg-pink" role="progressbar" style="width: 30%; border-radius:5px;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                                    <div class="col-md-6 col-xl-4">
+<div class="card">
+  <div class="card-body">
+  
+
+                               
+
+  <center>
+    <h4 class="card-title mt-0 text-success">Uncover The Picture  </h4>
+      
+      <h4 id="secret" style="display: block;"> you got some points! uncover part of the img !</h4>
+  <br>
+    
+  <div class="board"></div>
+
+  </center>
+  
+</div>        
+                     
+                    </div>
+                    </div>  
+                                                            <div class="col-md-6 col-xl-4">
+                    <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mt-0 text-success">Did you Do your Habit today?
+
+                                </h4>
+                                
+       <div id="app">
+         <div class="row">
+  <!-- <input id="checkbox" type="checkbox"/>
+  <label for="checkbox" ></label><p>Adi did you paint today?</p>
+</div>
+<div class="row">
+  <p> dfkguhydkjfhgdjg </p> -->
+  <!-- <button onclick="toggleBtnClick()()">Click me</button> -->
+ 
+    <div class="row">
+          <div class="col text-center">
+      
+  <!-- <button id="myDIV" onclick="toggleBtnClick()">Click me</button> -->
+  <form class="form-inline" v-on:mouseup="formSubmit">
+      <input  type="checkbox" id="switch3" switch="bool" checked="" v-model="newNameText" >
+      <label for="switch3" data-on-label="Yes" data-off-label="No" style="
+    padding-left: 20px;
+    margin-left: 20px;
+"></label>
+    </form>
+  </div>
+  </div>
+
+  
+</div>
+    <!-- <p>click the btn if you did todays habit</p> -->
+    <!-- <input type="button" value="clickme" @click="btnclick"> -->
+    <h4> 👈 # of boxes you can uncover:  {{points  }}  </h4>
+    <!-- <h1>{{today}}</h1> -->
+    <p>Every day you do your habit you will get 1 point!</p>
+    <p>If you and your buddie both do the habit today you will get 3 points!!</p>
+    <p>You can try to uncover the picture if you have some points</p>
+    <!-- <input id="adi" type="button" value="clickme" @click="btnclick"> -->
+  </div>                             
+<div class="container">
+  
+  
+</div>
+<input class="inp-cbx" id="cbx" type="checkbox" style="display: none;"/>
+
+
+                               
+                                </div>
+                            </div>
+                        <!-- todolist -->
+                    
+
+                
+                </div>  
+
+            </div><!-- container -->
+
+<!-- <footer class="footer text-center text-sm-left tempdiv">
+                © 2020 BetterYou <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> </span>
+            </footer> -->
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+
+ 
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+        crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"
+        integrity="sha384-BnFYVbw3PHhz5qWXTCSL12MjPc3KxjdKPx7R4R5JjIzxFmYX267NDyJ9B/nZANdg" 
+        crossorigin="anonymous">
+</script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.jquery.click-firewords.js"></script>
+
+    <!--Plugins-->
+    <script src="app.js"></script>
+   
+  
+
+
+
+
+
+</body></html>
