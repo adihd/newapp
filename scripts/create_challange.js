@@ -5,18 +5,6 @@ const game_code = document.querySelector('#game_code');
 
 
 
-var g_duration = 0;
-
-
-function save_duration()
-{
-  var ee = document.getElementById("duration_select");
-  g_duration = ee.options[ee.selectedIndex].text;
-    
-  
-}
-
-
 
 // // saving data
 // form.addEventListener('submit', (e) => { // submit == click or enter
@@ -43,11 +31,10 @@ function create_game()
 {
   var g_name = document.querySelector('#group-name').value;
   var g_start_date = document.querySelector('#example-datetime-local-input').value;
-  console.log(g_duration);
+  
   db.collection("create_game").doc(g_name).set({
       name: g_name,
       game_code: g_code,
-      duration: g_duration,
       start_date: g_start_date,
       admin:""
   }).then(function() {

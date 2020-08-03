@@ -29,15 +29,16 @@ month.set("12", "December");
 
 
 
-const setupID = (user) => {
-  if (user) {
-    userid = user.uid;
-    setUp(userid);
-    
-  } else {
-    userid = "";
-  }
-};
+  const setupID = (user) => {
+    if (user) {
+      userid = user.uid;
+      
+      setUp(userid);
+    } else {
+      userid = "";
+      console.log("arrivesetup");
+    }
+  };
 
 
 
@@ -63,27 +64,23 @@ function pair_buddies()
 {
   var cur_name = "";
   var par_id = "";
-  var cur_emj = "";
-  var par_emj ="";
   window.location.replace("start-game1.html");
    db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
   snapshot.docs.forEach(doc => {
         db.collection('users').doc(doc.id).update({partner_name: buddy, paired: true})
         cur_name = doc.data().name;
-        cur_emj = doc.data().user_emoji;
 
   });
   })
 
   db.collection('users').where("name", "==", buddy).get().then((snapshot) =>{
   snapshot.docs.forEach(doc => {
-        db.collection('users').doc(doc.id).update({partner_name: cur_name, partner_id: userid, paired: true, partner_emoji: cur_emj})
+        db.collection('users').doc(doc.id).update({partner_name: cur_name, partner_id: userid, paired: true})
         par_id = doc.data().user_id;
-        par_emj = doc.data().user_emoji;
 
           db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
           snapshot.docs.forEach(doc => {
-          db.collection('users').doc(doc.id).update({partner_id: par_id, partner_emoji: par_emj})
+          db.collection('users').doc(doc.id).update({partner_id: par_id})
         
           });
           })
@@ -118,6 +115,9 @@ function  addPairsToList(doc, c)
  
  function setUp(userid)
 {
+  
+    // var userid = firebase.auth().currentUser.uid;
+
       //get users from the same game of the conected user, that are paired
     db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
               snapshot.docs.forEach(doc => {

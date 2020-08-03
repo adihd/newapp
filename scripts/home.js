@@ -1,7 +1,3 @@
-const userEmoji = document.querySelector('#my_emoji');
-
-const partnerEmoji = document.querySelectorAll('#partner_emoji');
-
 const user_name = document.querySelector('#user_name_at_nav');
 
 //! todo : need to change it when user is working
@@ -13,12 +9,12 @@ const setupID = (user) => {
   if (user) {
     userid = user.uid;
     setUp(userid);
+    getMyStatus(userid);
   } else {
     userid = "";
   }
 };
 
-// userid = temp_userid;
 
 let month = new Map()
 month.set("01", "January");
@@ -45,6 +41,7 @@ function markAsDone() {
   db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
     snapshot.docs.forEach(doc => {
          db.collection('users').doc(doc.id).update({my_status: true})
+         
     });
     
   })
@@ -139,7 +136,7 @@ function setCountDown(doc)
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  days = days + (doc.data().duration * 7);
+  days = days + (25); //25 is the duration of the game
   // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = days + " Days";
 
@@ -160,15 +157,10 @@ function setUp(userid)
     //not realtime update
   db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {
-        const html = `<h1>${doc.data().user_emoji} Me</h1>`;
-        userEmoji.innerHTML = html;
-        const htmli = `<h1>${doc.data().partner_emoji} ${doc.data().partner_name}</h1>`;
-            partnerEmoji[0].innerHTML = htmli;
-
         var s1 =  doc.data().partner_name;
-        console.log(s1);
-        var string2 = 'Click to remind ' + s1 + ' to do her habit';
-        document.getElementById("click_to_remind").innerHTML = string2;
+        // console.log(s1);
+        // var string2 = 'Click to remind ' + s1 + ' to do her habit';
+        // document.getElementById("click_to_remind").innerHTML = string2;
       });
   })
   
@@ -185,7 +177,7 @@ function setUp(userid)
           db.collection('create_game').where("game_code", "==" ,g_code).get().then((snapshot) =>{
     snapshot.docs.forEach(doc => {
          
-         setCountDown(doc)
+  setCountDown(doc)
          
          
     });
@@ -201,6 +193,93 @@ function setUp(userid)
       });
   })
 }
+
+function getMyStatus(userid)
+{
+  
+  db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
+    snapshot.docs.forEach(doc => {
+      var myCardBool = doc.data().my_status;
+      console.log(myCardBool);
+      ChangeMyCard(myCardBool);
+      });
+  })
+}
+
+// var myCardBool = false
+// var myButtBool = false
+// var friendCardBool = false
+
+
+
+// whaen you click on my button:
+$('.myButt').click(function () {
+    // alert("hi")
+    // change the css of the card no animation
+    ChangeMyCard()
+});
+
+$(".myFriendButt").click(function () {
+    ChangeFriendCard()
+});
+// change the ui:
+// function changeUI() {
+//     // alert("changeui");
+
+// }
+
+// changing the ui of my chard
+function ChangeMyCard(myCardBool) {
+    // alert("my card");
+    // console.log("בדיקה");
+    if (!myCardBool === false) {
+        console.log(userid);
+        // myCardBool = true;
+        $('.myCard').css({
+            backgroundColor: "#99cc00"
+        });
+        // change the css and text of the button: no animation
+        $('.myButt').text("undo").removeClass("btn-primary").addClass("btn-secondary");
+        $("#uploadFileButton").removeClass("disabled").addClass("active");
+    } else {
+        // console.log(userid);
+        // myCardBool = false;
+        $('.myCard').css({
+            backgroundColor: "#F1F1F1"
+        });
+        // change the css and text of the button: no animation
+        $('.myButt').text("Done!").removeClass("btn-secondary").addClass("btn-primary");
+        $("#uploadFileButton").removeClass("active").addClass("disabled");
+    }
+
+
+}
+
+// changing the ui of a friend card
+function ChangeFriendCard() {
+
+    $('.myFriendButt').text("Poke again!")
+    $('.friendCard').css({
+        backgroundColor: "#99cc00"
+    });
+}
+
+// popover
+$(function () {
+    // Enables popover
+    $("[data-toggle=popover]").popover();
+});
+
+// Alert Modal Type
+$(document).on('click', '#success', function (e) {
+    swal(
+        'Success',
+        'You just <b style="color:green;">Poked</b> your partner!!!',
+        'success'
+        // now make the button in another color!
+        // document.getElementById('success').style.color = 'green';
+    )
+});
 
 
 

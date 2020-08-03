@@ -59,6 +59,70 @@ File: Main Css File
 1. Google Font
    ====== */
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,700");
+.multi-steps > li.is-active:before, .multi-steps > li.is-active ~ li:before {
+  content: counter(stepNum);
+  font-family: inherit;
+  font-weight: 700;
+}
+.multi-steps > li.is-active:after, .multi-steps > li.is-active ~ li:after {
+  background-color: #ededed;
+}
+
+.multi-steps {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.multi-steps > li {
+  counter-increment: stepNum;
+  text-align: center;
+  display: table-cell;
+  position: relative;
+  color: #CE6A86;
+}
+.multi-steps > li:before {
+  content: "\f00c";
+  content: "\2713;";
+  content: "\10003";
+  content: "\10004";
+  content: "\2713";
+  display: block;
+  margin: 0 auto 4px;
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: solid;
+  border-color: tomato;
+  border-radius: 50%;
+}
+.multi-steps > li:after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: tomato;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  z-index: -1;
+}
+.multi-steps > li:last-child:after {
+  display: none;
+}
+.multi-steps > li.is-active:before {
+  background-color: #fff;
+  border-color: #CE6A86;
+}
+.multi-steps > li.is-active ~ li {
+  color: #808080;
+}
+.multi-steps > li.is-active ~ li:before {
+  background-color: #ededed;
+  border-color: #ededed;
+}
 
 /*Adi, can you please implement the best font ever: 
          @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;515;600;700&display=swap'); */
@@ -339,7 +403,7 @@ strong {
 .icon-bar a {
   float: left;
   /* how many items in bars */
-  width: 33%;
+  width: 25%;
   text-align: center;
   padding: 12px 0;
   transition: all 0.3s ease;
@@ -369,7 +433,8 @@ strong {
 }
 
 .topbar .topbar-left {
-  background-color: #D770AD;
+  background-color:rgba(255, 0, 0, 0);
+  /* opacity: 0.0; */
   float: left;
   padding-left: 30px;
   height: 60px;
@@ -399,7 +464,9 @@ strong {
 }
 
 .navbar-custom {
-  background: #D770AD;
+  /* background: #D770AD; */
+  background-color:rgba(255, 0, 0, 0);
+  /* opacity: 0.0; */
   padding: 0 10px 0 0;
   margin-left: 240px;
   min-height: 60px;
@@ -428,7 +495,7 @@ strong {
 }
 
 .navbar-custom .topbar-nav li.show .nav-link {
-  background-color: #D770AD;
+  background-color:rgba(255, 0, 0, 0);
   color: #ffffff;
 }
 
@@ -659,8 +726,8 @@ input.search-input:-ms-input-placeholder {
                ====== */
 .page-wrapper {
   /* padding-top: 20px; */
-  -webkit-box-shadow: 0 1px 50px rgba(153, 153, 153, 0.35);
-  box-shadow: 0 1px 50px rgba(153, 153, 153, 0.35);
+  /* -webkit-box-shadow: 0 1px 50px rgba(153, 153, 153, 0.35); */
+  /* box-shadow: 0 1px 50px rgba(153, 153, 153, 0.35); */
   /* background-color: #D770AD; */
 }
 
@@ -4095,6 +4162,12 @@ input[switch="purple"]:checked+label {
 #greenbtn {
   background-color: green;
   border: none;
+}
+
+.inst{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

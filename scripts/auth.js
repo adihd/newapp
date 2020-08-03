@@ -33,44 +33,23 @@ auth.onAuthStateChanged(user => {
 //   //Code here
 // }
 
-// ! ×”×¨×©×ž×” ×œ××¤×œ×™×§×¦×™×”
-//  /////////////////////////////////////////////////////////////////////////
-// !emojipicker
-var useremoji1 = ""
 var urladi = window.location.href;
 var gameCode = "";
 
-$(document).ready(function () {
-  var el = $("#standalone").emojioneArea({
-    standalone: true,
-    autocomplete: false
-  });
-  el[0].emojioneArea.on("emojibtn.click", function (btn, event) {
-    // console.log(btn.html());
-    useremoji1 = el[0].emojioneArea.getText();
-    console.log(useremoji1);
-  });
-  // console.log();
-});
-// signup
+
+///////////////////////////////////////////// signup-new
+
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
-  // alert("dfsdffsd");
   e.preventDefault();
-
   // get user info
   const email = signupForm['signup-email'].value;
   // alert(signupForm['signup-email'].value);
   const password = signupForm['signup-password'].value;
-  const useremoji = useremoji1;
   // sign up the user & add firestore data for ex the name of the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    // alert(signupForm['signup-name'].value);
-    console.log("user signin success!!!")
-     if (window.location.href.indexOf("forms-invited") > -1) {gameCode = urladi.split("=").pop();}
-    return db.collection('users').doc(cred.user.uid).set({
-           
-      // mail: signupForm['signup-email'].value,
+  return db.collection('users').doc(cred.user.uid).set({
+
       name: signupForm['signup-name'].value,
       mail: email,
       my_status: false,
@@ -80,32 +59,25 @@ signupForm.addEventListener('submit', (e) => {
       max_points: 1000,
       partner_id: "",
       partner_name: "",
-      partner_emoji: "",
       user_id: cred.user.uid,
       prize_idea: "",
-      user_emoji: useremoji,
       paired: false,
       partner_status:false
     });
 
-  
-
+    // console.log("user signin success!!!")
+    //  if (window.location.href.indexOf("forms-invited") > -1) {gameCode = urladi.split("=").pop();}
+    
   }).then(() => {
-    // close the signup modal & reset form
-    // window.location.href = "forms-code.html";
-    // const modal = document.querySelector('#modal-signup');
-    // M.Modal.getInstance(modal).close();
+    
     console.log("user data signin success - tom!!!")
     signupForm.reset();
     window.location.replace("indexold.html");
-    // go to the next page
-
-    // $(window).load(function () {
-    //   console.log("hi adidas!")
-    // })
+  
 
   });
 });
+////////////sign-up-new-end
 
 // // listen for auth status changes תראה אם המשתמש מתחבר או 
 // let gameCode = "";

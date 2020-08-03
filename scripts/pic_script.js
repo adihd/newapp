@@ -1,5 +1,4 @@
 
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -11,19 +10,19 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-$("#imageUpload").change(function () {
-    // aria-expanded="false"
-    document.getElementById("collapseExample").setAttribute("class", "collapse");
-    document.getElementById("uploadpic").innerHTML = "Well done! You got 3 bonus points!!!";
-    readURL(this);
-    $('#switch3').prop('disabled' , true);
-    $('.form-inline').prop('disabled' , true);
+// $("#imageUpload").change(function () {
+//     // aria-expanded="false"
+//     // document.getElementById("collapseExample").setAttribute("class", "collapse");
+//     // document.getElementById("uploadpic").innerHTML = "Well done! You got 3 bonus points!!!";
+//     readURL(this);
+//     $('#switch3').prop('disabled' , true);
+//     $('.form-inline').prop('disabled' , true);
 
-});
+// });
 
 function saveImg(file)
 {
-  alert("hi")
+  alert("image upload to firebase")
   const setupID = (user) => {
     
     if (user) {
@@ -61,8 +60,8 @@ function uploadFile(selectedfile)
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userid = user.uid;
-    uploadFile2(userid ,selectedfile)
-    alert("hi")
+    getGameCode(userid, selectedfile);
+    
   } else {
      userid = "";
   }
@@ -70,12 +69,34 @@ function uploadFile(selectedfile)
  
 }
 
-function uploadFile2(userid , selectedfile)
+function getGameCode(userid, selectedfile)
+{
+
+   //get game code
+  db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
+    
+    snapshot.docs.forEach(doc => {
+      var game_code = doc.data().game_code;
+      uploadFile2(userid ,selectedfile, game_code)
+      });
+   })
+
+}
+
+function uploadFile2(userid , selectedfile, game_code)
 {
   
   var filename = userid;
+
+  //get date in string
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = mm + dd + yyyy;
+  
   // Create a root reference
-  var storageRef = storage.ref('/images/' + filename);
+  var storageRef = storage.ref('/' + game_code + '/' + today + '/' + filename);
   var uploadTask = storageRef.put(selectedfile);
 
   uploadTask.on('state_changed', function(snapshot){

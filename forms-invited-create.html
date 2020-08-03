@@ -95,18 +95,24 @@
   </style>
 </head>
 
-<body class="enlarge-menu">
+<body class="enlarge-menu" style="
+    padding-left: 15px;
+    padding-right: 15px;>
   <div class="page-wrapper">
     <!-- Page Content-->
     <div class="">
       <br>
-      <div class="container-fluid">
+      <div class="container-fluid" style="padding-right: 15px; padding-left: 15px;">
         <div class="row d-flex justify-content-center" style="
     height: 395px;
 ">
           <div class="card">
             <div class="card-body">
-
+              <ul class="list-unstyled multi-steps">
+    <li>Sign Up</li>
+    <li>Challenge</li>
+    <li class="is-active">Habbit</li>
+  </ul>
               <br>
               <h5 class="mt-0">Choose your habit</h5>
               <div class="col-sm-4">
@@ -123,21 +129,21 @@
 
 
                 <!-- fun habit pick -->
-                <div class="input-field">
+                <div class="input-field" style="display: flex; justify-content: center;">
                   <div id="habbittoggle" class="btn-group btn-group-toggle" data-toggle="buttons"
                     onchange="chooseHabit(this)">
-                    <label class="habitopti btn btn-warning">
+                    <label class="habitopti btn btn-warning" style="width:96px";>
                       <input class="optionhabit" type="radio" name="options" id="paint_habit" autocomplete="off">
                       <h1>
                         🎨 </h1>
                       <p>Paint</p>
                     </label>
-                    <label class="habitopti btn btn-warning">
+                    <label class="habitopti btn btn-warning" style="width:96px";>
                       <input class="optionhabit" type="radio" name="options" id="knit_habit" autocomplete="off">
                       <h1>🧶</h1>
                       <p>Knit</p>
                     </label>
-                    <label class="habitopti btn btn-warning">
+                    <label class="habitopti btn btn-warning" style="width:96px";>
                       <input class="optionhabit" type="radio" name="options" id="play_instrument_habit"
                         autocomplete="off">
                       <h1>🎸</h1>
@@ -194,9 +200,10 @@
 
 
 
-      <footer class="footer text-center text-sm-left tempdiv">
+      <footer>
+      <!-- class="footer text-center text-sm-left tempdiv">
         © 2020 Better You <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i
-            class="mdi mdi-heart text-danger"></i> </span>
+            class="mdi mdi-heart text-danger"></i> </span> -->
       </footer>
 
 
