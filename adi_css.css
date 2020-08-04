@@ -1,0 +1,97 @@
+h1,h2,h3,h4,h5{
+  font-family:'Nunito', sans-serif;
+}
+#loader { 
+            border: 12px solid #f3f3f3; 
+            border-radius: 50%; 
+            border-top: 12px solid #444444; 
+            width: 70px; 
+            height: 70px; 
+            animation: spin 1s linear infinite; 
+        } 
+          
+        @keyframes spin { 
+            100% { 
+                transform: rotate(360deg); 
+            } 
+        } 
+          
+        .center { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            margin: auto; 
+        } 
+        
+body {
+			/* position: relative; */
+			background-color: #E9EEF5;
+			/* margin: 0;
+            padding: 0;
+            width: 100%;
+            z-index: 0; */
+		}
+
+		.card {
+
+			background: #FFFFFF;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			border-radius: 20px;
+      margin-bottom: 25px;
+		}
+
+		/* height: 100vh;
+
+        .navbar-nocolor {
+            background-color: rgba(255, 255, 255, 0);
+            border-style: none;
+            /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/rip.svg) bottom center; */
+
+    .navbar-nocolor {
+            background-color: rgba(255, 255, 255, 0);
+            border-style: none;
+            /* color: #FFFFFF; */
+            }
+
+		.apppage {
+			background: url(curve.svg) top center;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.icon-bar {
+			background-color: #FFFFFF;
+			overflow: auto;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			z-index: 2;
+		}
+
+		.icon-bar a {
+			float: left;
+			/* how many items in bars */
+			width: 25%;
+			text-align: center;
+			padding: 12px 0;
+			transition: all 0.3s ease;
+			color: #888D91;
+			font-size: 36px;
+		}
+
+		.icon-bar a:hover {
+			background-color: #a5a5a5;
+		}
+
+		.icon-bar a.active {
+			background-color: #DBDADA;
+		}
+    .adicard{
+      background: linear-gradient(180deg, rgba(20, 20, 20, 0.5) 59.9%, rgba(0, 0, 0, 0.2) 100%);
+      box-shadow: none;
+      width: 89px;
+      height: 84px;
+      color: #FFFFFF;
+    }

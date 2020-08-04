@@ -50,7 +50,6 @@
 
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="./nitifications.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <!-- tippy 
         -->
@@ -82,28 +81,53 @@
         }
     </style>
 
+<link rel="stylesheet" href="./nitifications2.css">
+
 </head>
 
 <body data-keep-enlarged="true">
 
 
+<!-- activate notification and notify-bubble -->
+<div class="container">
+  <div class="notify-container">
+    <span class="notify-bubble">1</span>
+    <button type="button" class="btn btn-notify">activate notification</button>
+
+<!-- 
+<div class="container">
+  <div class="notify-container">
+    <span class="notify-bubble2">1</span>
+    <button type="button" class="btn btn-notify">to have bubble</button> -->
+
 
 
     <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
-        <a class="active notification" href="home2.html"><i class="fa fa-home"></i>
-        <span class="badge">!</span>
+        <a class="active" href="home2.html">
+          <i class="fa fa-home"></i>
+          <div class="container">
+          <div class="notify-container">
+                <span class="notify-bubble2">1</span>
+          </div>
+          </div>
+
+    
+
+        
+        <!-- <span class="notify-bubble2">1</span> -->
+        <!-- <span class="badge">!</span> -->
         </a>
-        <a class="notification" href="prize-tom.html"><i class="fa fa-trophy"></i>
-        <span class="badge">!</span>
+        <a href="prize-tom.html"><i class="fa fa-trophy"></i>
+        <!-- <span class="badge">!</span> -->
         </a>
         <!-- <a href="prog.html"><i class="fas fa-comments"></i></a> -->
-        <a class="notification" href="game.html"><i class="fa fa-gamepad"></i>
-        <span class="badge">!</span>
+        <a href="game.html"><i class="fa fa-gamepad"></i>
+        <!-- <span class="badge">!</span> -->
         </a>
         <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
-        <a class="notification" href="gallery.html"><i class="fa fa-picture-o"></i>
-        <span class="badge">!</span>
+        <a href="gallery.html"><i class="fa fa-picture-o"></i>
+        <!-- <span class="badge">!</span> -->
         </a>
     </div>
     <!-- Adi.End icon Bar footer-->
@@ -342,7 +366,12 @@ padding-top: 70px;">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <!-- <script  src="./tile_game_script.js"></script> -->
     <!-- <script src="game1.js"></script> -->
-    <script src="nitifications.js"></script>
+    <!-- <script src="nitifications2.js"></script> -->
+    <script>
+      $('.btn-notify').on('click', function () {
+  	    $('.notify-bubble2').show(400);
+        })
+    </script>
 
 
 

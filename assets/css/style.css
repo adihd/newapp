@@ -96,14 +96,14 @@ File: Main Css File
   font-weight: bold;
   border-width: 2px;
   border-style: solid;
-  border-color: tomato;
+  border-color: #CE6A86;
   border-radius: 50%;
 }
 .multi-steps > li:after {
   content: "";
   height: 2px;
   width: 100%;
-  background-color: tomato;
+  background-color: #CE6A86;
   position: absolute;
   top: 16px;
   left: 50%;
@@ -132,7 +132,7 @@ File: Main Css File
 html {
   position: relative;
   min-height: 100%;
-  background-color: #475766;
+  /* background-color: #475766; */
 }
 
 *:not(i) {
@@ -4168,6 +4168,12 @@ input[switch="purple"]:checked+label {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
+  width: 92px;
+  height: 92px;
 }
 
+.vid{
+  max-width: 100%;
+  height: auto;
+}
 /*# sourceMappingURL=style.css.map */

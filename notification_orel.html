@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Better You</title>
-    <link rel="stylesheet" href="https://cdn.js.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="./pic_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A premium admin dashboard template by themesbrand" name="description">
@@ -49,8 +49,8 @@
 
 
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="./nitifications.css">
+
+    <link rel="stylesheet" href="./notification_orel.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <!-- tippy 
         -->
@@ -91,20 +91,18 @@
 
     <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
-        <a class="active notification" href="home2.html"><i class="fa fa-home"></i>
-        <span class="badge">!</span>
-        </a>
-        <a class="notification" href="prize-tom.html"><i class="fa fa-trophy"></i>
-        <span class="badge">!</span>
-        </a>
+        <a href="adi_home2.html"><i class="fa fa-home"></i></a>
+        <a href="prize-tom.html"><i class="fa fa-trophy"></i>
+        <div class="container">
+  <div class="notify-container">
+    <span class="notify-bubble2">1</span>
+  </div>
+        </div>
+   </a>
         <!-- <a href="prog.html"><i class="fas fa-comments"></i></a> -->
-        <a class="notification" href="game.html"><i class="fa fa-gamepad"></i>
-        <span class="badge">!</span>
-        </a>
+        <a class="active" href="trygame.html"><i class="fa fa-gamepad"></i></a>
         <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
-        <a class="notification" href="gallery.html"><i class="fa fa-picture-o"></i>
-        <span class="badge">!</span>
-        </a>
+        <a href="adi_gallery.html"><i class="fa fa-picture-o"></i></a>
     </div>
     <!-- Adi.End icon Bar footer-->
 <!-- !nav bar -->
@@ -133,7 +131,7 @@
             <div class="col text-center">
                 <!-- ?ribbon -->
 
-                <h1>asdasd</h1>
+              
                 <div id=" top">
                     <header class="ribbon-container">
 
@@ -193,19 +191,6 @@ padding-top: 70px;">
                                     <div class="gametile tile43 grass"></div>
                                     <div class="gametile tile44 grass"></div>
                                 </div>
-
-<!-- trigger for notification bubble -->
-
-<!-- game temporary buttons -->
-<!-- 
-
-<button id="UI" type="button">UI!</button>
-<button id="done" type="button">done!</button>
-<button id="undone" type="button">undone!</button>
-<button id="gameover" type="button">day over!</button>
-<button id="print" type="button">printlist!</button>
-<button id="prize" type="button">prize!</button>
-<button id="bonus" type="button">bonus!</button> -->
                                 <!-- <div class="sidebar">
 <div class="stone gametile"></div>
 <div class="stone gametile"></div>
@@ -226,12 +211,22 @@ padding-top: 70px;">
                 <br>
                 <!-- ?game -->
                 <!-- ?acordion -->
+                <!-- <h4 style="color:#ffffff; font-weight: bold;">Tips How to Stay On Track</h4> -->
+                
+                <div class="container">
+                <div class="notify-container">
+                
+                <button type="button" class="btn btn-notify">activate notification</button>
+                
+                <h4 class="card-title mt-0 text-success">Tips How to Stay On Track</h4>
+                <!-- <h5 class="mt-0">Tips How to Stay On Track</h5> -->
+                <!-- <br> -->
                 <div class="">
                             <div class="card">
                                 <div class="card-body">
     
-                                    <h5 class="mt-0">Tips How to Stay On Track</h5>
-                                    <br>
+                                    <!-- <h5 class="mt-0">Tips How to Stay On Track</h5>
+                                    <br> -->
                                     <!-- <p class="text-muted font-13 mb-4">Extend the default collapse behavior to create an accordion.</p> -->
     
                                     <div class="accordion" id="accordionExample">
@@ -239,13 +234,13 @@ padding-top: 70px;">
                                             <div class="card-header" id="headingOne">
                                             <h5 class="my-0">
                                                 <button class="btn btn-link ml-3 collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                Collapsible Group Item #1
+                                                <h4>Title's Tip #1</h4>
                                                 </button>
                                             </h5>
                                             </div>
                                         
-                                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
-                                            <div class="card-body text-muted font-13">
+                                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" >
+                                            <div class="card-body font-15" style="color:#000000;">
                                                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                                             </div>
                                             </div>
@@ -342,7 +337,7 @@ padding-top: 70px;">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <!-- <script  src="./tile_game_script.js"></script> -->
     <!-- <script src="game1.js"></script> -->
-    <script src="nitifications.js"></script>
+    <script src="notification_orel.js"></script>
 
 
 

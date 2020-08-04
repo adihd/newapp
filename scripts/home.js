@@ -1,5 +1,7 @@
 const user_name = document.querySelector('#user_name_at_nav');
 
+const user_image_place = document.querySelector('#imagePreview');
+
 //! todo : need to change it when user is working
 const temp_userid = "tomID";
 // userid
@@ -10,6 +12,7 @@ const setupID = (user) => {
     userid = user.uid;
     setUp(userid);
     getMyStatus(userid);
+    setPictures(userid);
   } else {
     userid = "";
   }
@@ -280,6 +283,39 @@ $(document).on('click', '#success', function (e) {
         // document.getElementById('success').style.color = 'green';
     )
 });
+
+function setPictures(userid)
+{
+
+  
+  
+   //get date in string
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = mm + dd + yyyy;
+
+  db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+    
+    var g_code = doc.data().game_code;
+    var rootref = firebase.database().ref().child(g_code + '/' + today + '/' + userid + ".png" );
+    rootref.getDownloadURL().then(function(url) {
+    var userImg = document.querySelector('#imagePreview');
+    userImg.style = "background-image: url(" + url + ");";
+    });
+    // rootref.on("child_added", snap=>{
+    //   console.log("arrive_here");
+    //   var userImage = snap.child(userid).val();
+    //   var partnerImage = snap.child(doc.data().partner_id);
+    //   //the line to enter the picture to html
+    //   user_image_place.style = "background-image: url(" + userImage + ");"
+    // });
+        });
+        })
+  
+}
 
 
 
