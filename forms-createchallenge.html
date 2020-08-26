@@ -11,7 +11,8 @@
     <meta charset="utf-8">
     <title>Better You</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A premium admin dashboard template by themesbrand" name="description">
+      <meta content="A 25 day challenge to adopt a new habit, have fun with friends and win a prize!" name="description">
+      <meta property="og:image" itemprop="image" content="assets/images/Sloth-03.png" />
     <meta content="Themesbrand" name="author">
 
     <!-- App favicon -->
@@ -100,6 +101,17 @@
 <body>
     <div class="page-wrapper">
         <!-- Page Content-->
+        <div class="container-fluid">
+        <br /><br />
+        <ul class="list-unstyled multi-steps">
+        <li >Sign Up</li>
+        <li class="is-active">Challenge</li>
+        <li >Habit</li>
+        <!-- <li>Finish</li> -->
+        </ul>
+        </div>
+        
+        
         <br>
         <div class="">
 
@@ -107,13 +119,13 @@
                 <div class="">
                     <div class="card">
                         <div class="card-body">
-                          <ul class="list-unstyled multi-steps">
+                          <!-- <ul class="list-unstyled multi-steps">
     <li>Sign Up</li>
     <li  class="is-active">Challenge</li>
     <li>Habbit</li>
-  </ul>
+  </ul> -->
                             <h5 class="mt-0">Create a challenge!</h5>
-                            <p class="text-muted font-13 mb-4">Set ground rules to the contest and invite friends</p>
+                            <p class="text-muted font-13 mb-4">Set ground rules for the challenge and invite up to 8  friends. The challenge name must be in english with no spaces.</p>
 
                             <div>
 
@@ -165,12 +177,15 @@
                                             <button type="button" class="btn btn-primary btn-clipboard copyboard"
                                                 data-clipboard-action="copy" data-clipboard-target="#clipboardInput"><i
                                                     class="far fa-copy mr-2"></i>Copy</button>
+                                               
                                         </div>
                                     </div>
                                     <br>
                                     <!-- <button id="setadmin" onclick="setAdmin(); create_game(); "
                                         class="btn btn-primary btn-lg btn-block sumbit-btn" type="submit">Next</button> -->
-
+     <button class="buttonWhat btn btn-primary btn-lg btn-block">Share with friends!</button>
+     <br>
+<p class="result"></p>
                                      <button id="setadmin" onclick="create_game()" onclick="setAdmin()"
                                         class="btn btn-primary btn-lg btn-block sumbit-btn" type="submit">Next</button>
                                 </div>
@@ -246,6 +261,26 @@
         <script src="scripts/login.js"></script>
         <script src="scripts/create_challange.js"></script>
         <script src="scripts/set_admin.js"></script>
+        <script>
+                let shareData = {
+        title: 'BetterYou!',
+        text: 'come and join my game!',
+        url: 'https://newapp-2.adihd.repl.co/',
+      }
+
+      const btn = document.querySelector('.buttonWhat');
+      const resultPara = document.querySelector('.result');
+
+      btn.addEventListener('click', () => {
+        navigator.share(shareData)
+          .then(() =>
+            resultPara.textContent = 'BetterYou shared successfully'
+          )
+          .catch((e) =>
+            resultPara.textContent = 'Error: ' + e
+          )
+      });
+          </script>
 
 
 

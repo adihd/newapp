@@ -59,7 +59,9 @@
 
 <body style="visibility: hidden" data-keep-enlarged="true">
   <div style="visibility: visible" id="loader" class="center"></div> 
-
+  <div class="home-noti mb-4 pl-4 pb-2"><button type="button" class="btn btn-secondary home-noti-btn" data-container="body" data-toggle="popover" data-placement="top" data-content="your buddy just poked you! haha">
+top
+</button></div>
 
 
 	<!-- Top Bar Start -->
@@ -70,12 +72,25 @@
 
     <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
-        <a class="active" href="adi_home2.html"><i class="fa fa-home"></i></a>
-        <a href="prize-tom.html"><i class="fa fa-trophy"></i></a>
-        <!-- <a href="prog.html"><i class="fas fa-comments"></i></a> -->
-        <a href="trygame.html"><i class="fa fa-gamepad"></i></a>
-        <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
-        <a href="adi_gallery.html"><i class="fa fa-picture-o"></i></a>
+
+      <a class="notification" href="adi_home3.html">
+      <i class="fa fa-home"></i>
+      <span class="hide badge badge-danger badge-pill noti-icon-badge">!</span>
+      </a>
+      <a class="notification" href="prize-tom.html"><i class="fa fa-trophy"></i>
+      <span  id="placeUp" class= "badge badge-danger badge-pill noti-icon-badge"><img style="height: 15px" src="img-game/up.png"></img>
+      </span>
+      <span  id="placeDown" class= "badge badge-danger badge-pill noti-icon-badge"><img style="height: 15px" src="img-game/down.png"></img>
+      </span>
+      </a>
+      <!-- <a href="prog.html"><i class="fas fa-comments"></i></a> -->
+      <a class="notification" href="trygame.html"><i class="fa fa-gamepad"></i>
+      <span class=" hide badge badge-danger badge-pill noti-icon-badge">!</span>
+      </a>
+      <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
+      <a class="notification" class="active" href="adi_gallery.html"><i class="fa fa-picture-o"></i>
+      <span id="newPic" class=" badge badge-danger badge-pill noti-icon-badge">!</span>
+      </a>
     </div>
     <!-- Adi.End icon Bar footer-->
 
@@ -83,16 +98,15 @@
     <!-- Page page-wrapper-->
     <div class="page-wrapper apppage pl-4 pr-4">
         <!-- Page Content-->
+        <!-- ////////////// navbar -->
       <nav class="pl-1 pr-1 navbar navbar-dark navbar-nocolor">
-            <a class="navbar-brand" href="#">
-                <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                BetterYou
-            </a>
+<a class="navbar-brand" href="#">
+                <img src="cute-img/sloth.png" width="50" height="50" class="" alt="">     <b>BetterYou</b></a>
             <ul class="nav navbar-dark navbar-nav navbar-right">
-                <li><a class="text-white" href="#"><i class="fas fa-sign-in-alt"></i></span> Logout</a></li>
+                <li><a class="text-white" href="#"><i class="fas fa-sign-in-alt"></i></span> <b>Logout</b></a></li>
             </ul>
         </nav>
+         <!-- ////////////// navbar -->
         <div class="">
             <!-- Page fluid-->
             <!-- !start app capsule -->
@@ -107,20 +121,20 @@
 <div class="row text-center">
  <div class="col">
   <div class="card adicard">
-    <h1 class="mb-0">h1</h1>
-    <p>ppppp</p>
+    <h1 class="mb-0" id="demo"> </h1>
+    <p>Days Left</p>
   </div>
  </div>
   <div class="col">
   <div class="card adicard">
-    <h1 class="mb-0">h1</h1>
-    <p>ppppp</p>
+    <h1 class="mb-0" id="myPoints"></h1>
+    <p>Points</p>
   </div>
  </div>
   <div class="col">
   <div class="card adicard">
-    <h1 class="mb-0">h1</h1>
-    <p>ppppp</p>
+    <h1 class="mb-0" id="myPlace"> </h1>
+    <p>Place</p>
   </div>
  </div>
 
@@ -135,8 +149,8 @@
                         <div class="card    ">
                             <div class=" ">
                                 <div class="countdown">
-                                    <h5>DAYS LEFT TO CHALLENGE:</h5>
-                                    <p id="demo"></p>
+                                    <h5 id = "challengeName"  ></h5>
+                                    <!-- <p id="demo"></p> -->
                                 </div>
                             </div>
 
@@ -157,7 +171,7 @@
 
                                     <div class="avatar-upload">
                                         <div class="avatar-preview img-fluid">
-                                            <div id="imagePreview" style="background-image: url(cute-img/cute-knit.svg);">
+                                            <div id="imagePreview" class="myimg">
                                             </div>
                                         </div>
                                     </div>
@@ -167,13 +181,14 @@
                                 <!-- <div class="col-1"></div> -->
                                 <div class="col-7">
 
-                                    <h4 class="card-title mt-2 mb-1">Adi Strauss</h4>
-                                    <p class="card-text font-13 mb-2 txtchange" style="color:black; height:40;"> Did you do your habbit today? 
+                                    <h4 class="card-title mt-2 mb-1">You!</h4>
+                                    <p class="card-text font-13 mb-2 txtchange" style="color:black; height:40;"> Did you do your habit today? 
                                     </p>
                                     <div class="row no-gutters">
                                       <div class="col container-fluid pl-2" style="margin-left:0px; width:100%;">
-                                            <button href="#" class="myButt btn btn-primary"   >yes!</button>
-<!-- <button href="#" class="myButt btn btn-primary " onclick="markAsDone()" >Done!</button> -->
+                                       
+                                            <button href="#" class="myButt btn btn-primary" onclick="markAsDone()"> YES ! </button>
+
                                         </div>
                                         <div class="col-7 container-fluid">
                                             <div class="avatar-edit">
@@ -204,7 +219,7 @@
 
                                     <div class="avatar-upload">
                                         <div class="avatar-preview img-fluid">
-                                            <div id="imagePreview1" style="background-image: url(cute-img/cute-piano.svg);">
+                                            <div id="imagePreview1" class="friendimg">
                                             </div>
                                         </div>
                                     </div>
@@ -214,14 +229,16 @@
                                 <!-- <div class="col-1"></div> -->
                                 <div class="col-7">
 
-                                    <h4 class="card-title mt-2 mb-1">Orel Ben israel</h4>
+                                    <h4 class="card-title mt-2 mb-1">Your Buddy</h4>
 
                                     <div class="row no-gutters">
-                                        <p class="card-text font-13 mb-2" style="color:black;"> Poke your buddy to remind them to do their habbit.
+                                        <p class="card-text font-13 mb-2" id="poke" style="color:black;"> Poke your buddy to remind them to do their habit.
                                         </p>
-                                        <div class="" style="width:100%">
-                                            <a href="#" id="success" class="myFriendButt btn btn-primary col">Poke
-                                                Friend!</a>
+                                        
+                                        <div class="" style="width:100%"> 
+                                            <button href="#" id="success" class="myFriendButt btn btn-primary col">Poke
+                                                Friend!</button>
+                                                
 
                                         </div>
 
@@ -388,10 +405,16 @@
     <!-- <script src="assets/js/app.js"></script> -->
 
     <script src="scripts/auth.js"></script>
-    
+   
     <!-- <script src="scripts/points.js"></script> -->
-    <!-- <script src="scripts/home.js"></script> -->
-    <script src="adi_home.js"></script>
+
+    <script src="scripts/home.js"></script>
+   
+    
+   
+     <script src="adi_ui.js"></script>
+    
+    <!-- <script src="adi_home.js"></script> -->
 
 
     <!-- <script src="scripts/prize.js"></script> -->

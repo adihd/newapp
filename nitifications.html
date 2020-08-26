@@ -86,26 +86,42 @@
 
 <body data-keep-enlarged="true">
 
+<!-- speech bubbles -->
+
+<!-- <div class="box sb1">I'm speech bubble 1</div> -->
+<!-- <div class="box sb2">I'm speech bubble</div>
+<div class="box sb3">I'm speech bubble</div>
+<div class="box sb4">I'm speech bubble</div> -->
 
 
 
-    <!-- Adi.Start icon Bar footer -->
+   <!-- Adi.Start icon Bar footer -->
     <div class="icon-bar">
-        <a class="active notification" href="home2.html"><i class="fa fa-home"></i>
-        <span class="badge">!</span>
+      <p class="triangle-isosceles">Your Buddy Poked you</p>
+        <a class="active notification" href="home2.html"><i class="fa fa-home">
+        </i>
+        <!-- <span class="badge">!</span> -->
+        
         </a>
-        <a class="notification" href="prize-tom.html"><i class="fa fa-trophy"></i>
-        <span class="badge">!</span>
+        <a class="badge badge-danger badge-pill noti-icon-badge" href="prize-tom.html"><i class="fa fa-trophy"></i>
+        <span class="badge">&uarr;</span>
+        
+        <!-- arrow down
+        <span class="badge">&uarr;</span> -->
+
         </a>
         <!-- <a href="prog.html"><i class="fas fa-comments"></i></a> -->
-        <a class="notification" href="game.html"><i class="fa fa-gamepad"></i>
-        <span class="badge">!</span>
+        <a class="badge badge-danger badge-pill noti-icon-badge" href="game.html"><i class="fa fa-gamepad"></i>
+        <span class="badge">&#x1F4A1</span>
         </a>
         <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
-        <a class="notification" href="gallery.html"><i class="fa fa-picture-o"></i>
+        <a class="badge badge-danger badge-pill noti-icon-badge" href="gallery.html"><i class="fa fa-picture-o"></i>
         <span class="badge">!</span>
         </a>
     </div>
+
+
+    
     <!-- Adi.End icon Bar footer-->
 <!-- !nav bar -->
 
@@ -154,9 +170,13 @@ padding-top: 70px;">
 
                             <!-- <img src="http://adrianpayne.me/game/assets/images/avatar.png" class="avatar" />
 <div class="speech-bubble"></div> -->
+<button type="button" class="btn btn-pink waves-effect mo-mb-2" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover836618">
+                                        Popover on top
+                                    </button>
+
                             <center>
 
-                                <div class="gameBoard">
+                                <!-- <div class="gameBoard">
 
                                     <div class="gameover">
                                         <h3>You scored</h3>
@@ -192,7 +212,7 @@ padding-top: 70px;">
                                     <div class="gametile tile42 grass"></div>
                                     <div class="gametile tile43 grass"></div>
                                     <div class="gametile tile44 grass"></div>
-                                </div>
+                                </div> -->
 
 <!-- trigger for notification bubble -->
 
@@ -300,7 +320,7 @@ padding-top: 70px;">
 
     <script src="assets/plugins/tippy/tippy.all.min.js"></script>
     <script src="assets/pages/jquery.tooltipster.js"></script>
-
+<!-- <script src="assets/pages/jquery.tooltipster.js"></script> -->
 
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -343,6 +363,7 @@ padding-top: 70px;">
     <!-- <script  src="./tile_game_script.js"></script> -->
     <!-- <script src="game1.js"></script> -->
     <script src="nitifications.js"></script>
+
 
 
 

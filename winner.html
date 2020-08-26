@@ -8,6 +8,7 @@
     <meta content="Themesbrand" name="author">
 
     <!-- App favicon -->
+
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- Material design icons CSS -->
@@ -40,17 +41,27 @@
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous">
 
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="adi_css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;0,900;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="adi_css.css">
 
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+        }
+    </style>
 
-
-<!-- </head> -->
+    <!-- </head> -->
 
 </head>
 
 <body style="visibility: hidden" data-keep-enlarged="true">
-  <div style="visibility: visible" id="loader" class="center"></div> 
+    <div style="visibility: visible" id="loader" class="center"></div>
+    <canvas id="confetti"></canvas>
+
 
     <!-- Top Bar Start -->
     <div class="topbar">
@@ -69,27 +80,7 @@ margin-right: 20px;
             </a>
         </div>
 
-        <nav class="navbar-custom" style="">
 
-            <!-- Search input -->
-
-
-            <ul class="list-unstyled topbar-nav float-right mb-0">
-
-                <li class="dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <span id="user_name_at_nav" class="ml-1 nav-user-name"> </span>
-                        <i class="mdi mdi-chevron-down"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-
-                        <a id="logout" class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i>
-                            Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
         <!-- end navbar-->
     </div>
     <!-- Top Bar End -->
@@ -98,37 +89,47 @@ margin-right: 20px;
 
     <!-- Adi.Start icon Bar footer -->
     <!-- Adi.Start icon Bar footer -->
-    <!-- <div class="icon-bar">
-        <a  href="home2.html"><i class="fa fa-home"></i></a>
-        <a class="active" href="prize-tom.html"><i class="fa fa-trophy"></i></a> -->
+    <div class="icon-bar">
+
+        <a class="notification" href="adi_home3.html">
+            <i class="fa fa-home"></i>
+            <span class="hide badge badge-danger badge-pill noti-icon-badge">!</span>
+        </a>
+        <a class="notification" href="prize-tom.html"><i class="fa fa-trophy"></i>
+            <span class="hide badge badge-danger badge-pill noti-icon-badge">!</span>
+        </a>
         <!-- <a href="prog.html"><i class="fas fa-comments"></i></a> -->
-        <!-- <a href="game.html"><i class="fa fa-gamepad"></i></a> -->
+        <a class="notification" href="trygame.html"><i class="fa fa-gamepad"></i>
+            <span class=" hide badge badge-danger badge-pill noti-icon-badge">!</span>
+        </a>
         <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
-    <!-- </div> -->
+        <a class="notification" class="active" href="adi_gallery.html"><i class="fa fa-picture-o"></i>
+            <span class="hide badge badge-danger badge-pill noti-icon-badge">!</span>
+        </a>
+    </div>
+
     <!-- Adi.End icon Bar footer-->
     <!-- Adi.End icon Bar footer-->
 
 
     <!-- Page page-wrapper-->
     <div class="page-wrapper apppage pl-4 pr-4">
+
         <!-- Page Content-->
-      <nav class="pl-1 pr-1 navbar navbar-dark navbar-nocolor">
+        <!-- ////////////// navbar -->
+        <nav class="pl-1 pr-1 navbar navbar-dark navbar-nocolor">
             <a class="navbar-brand" href="#">
-                <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                BetterYou
-            </a>
+                <img src="cute-img/sloth.png" width="50" height="50" class="" alt=""> <b>BetterYou</b></a>
             <ul class="nav navbar-dark navbar-nav navbar-right">
-                <li><a class="text-white" href="#"><i class="fas fa-sign-in-alt"></i></span> Logout</a></li>
+                <li><a class="text-white" href="#"><i class="fas fa-sign-in-alt"></i></span> <b>Logout</b></a></li>
             </ul>
         </nav>
+        <!-- ////////////// navbar -->
         <div class="">
             <!-- Page fluid-->
             <!-- !start app capsule -->
             <div id="appCapsule" class="pt-1">
-                <br>
-                <br>
-                 <div style="background-image: url('fun.png');">
+
                 <!-- Page fluid-->
                 <!-- ribbon! -->
 
@@ -149,41 +150,35 @@ margin-right: 20px;
 
                 <div class="col-12 p-0">
 
-                  <div class="text-center">
-                                <img src="assets/images/fun.png" alt="" style="height: 200px;">
-                                
-                                
-
-                            </div>
-<!-- ribbon! -->
-<div class="winner">
-                <div id="top" style=" margin-top: 20px; margin-bottom: 20px;">
-                    <header class="ribbon-container" style="transition: none 0s ease 0s; cursor: move; position: relative; top: -68px;">
-                        <!-- <h1>The Windhover</h1> -->
-                        <h2 class="ribbon">
-                            <a class="ribbon-content"> congratulations! </a>
-                            <!-- <h3 id="myHeader"></h3> -->
-                        </h2>
-                    </header>
-                </div>
-                
-
 
 <br>
-                <div class="card" style="position: relative; top: -37px; transition: none 0s ease 0s; cursor: move;">
+<br>
+
+                    <div class="card">
                         <div class="card-body">
-                          <div class="text-center">
-                          <h3>adi and maya you are the winners!</h3>
-                          <p> good job! </p>
 
+                            <div class="text-center">
+                                <img src="cute-img/001-medal.png" alt="" class="thumb-xl mr-1">
 
-                            
+                                <h3 id="winnersName"> </H3>
 
-</div>
-</div>
-                <!-- ribbon --
-                    
                             </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="text-center">
+
+                                <H4> The rest of you owe them Pizza, better luck next time... the better you team belive in you!
+                                </H4>
+
+
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -198,21 +193,22 @@ margin-right: 20px;
     <!-- Page page-wrapper-->
 
 
-    <script> 
-        document.onreadystatechange = function() { 
-            if (document.readyState !== "complete") { 
-                document.querySelector( 
-                  "body").style.visibility = "hidden"; 
-                document.querySelector( 
-                  "#loader").style.visibility = "visible"; 
-            } else { 
-                document.querySelector( 
-                  "#loader").style.display = "none"; 
-                document.querySelector( 
-                  "body").style.visibility = "visible"; 
-            } 
-        }; 
-    </script> 
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState !== "complete") {
+                document.querySelector(
+                    "body").style.visibility = "hidden";
+                document.querySelector(
+                    "#loader").style.visibility = "visible";
+            } else {
+                document.querySelector(
+                    "#loader").style.display = "none";
+                document.querySelector(
+                    "body").style.visibility = "visible";
+            }
+        };
+    </script>
+
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -265,8 +261,11 @@ margin-right: 20px;
 
     <!-- <script src="assets/js/app.js"></script> -->
     <!-- <script src="scripts/points.js"></script> -->
-    <script src="scripts/auth.js"></script>
+    <!-- <script src="scripts/auth.js"></script> -->
     <script src="scripts/prize.js"></script>
+    <script src="scripts/win.js"></script>
+    <script src="confetti.js"></script>
+    <script src="adi_ui.js"></script>
 
     <script>
         // popover
@@ -303,6 +302,7 @@ margin-right: 20px;
             )
         });
     </script>
+
 </body>
 
 </html>

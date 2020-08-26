@@ -89,7 +89,10 @@ function setHabitprize() {
         prize_idea: inputprize,
         game_code : gameCode
       }).then(() => {
-        window.location.replace("start-game.html");
+        // if(doc.data().paired) {window.location.replace("start-game1.html");}
+        // else {window.location.replace("start-game.html");}
+        {window.location.replace("start-game.html");}
+        
         // console.log("habit")
       });
     });
@@ -139,12 +142,14 @@ function setHabitprize1() {
 
 function  setUpAdmin(userid)
 {
+  
   if (window.location.href.indexOf("forms-invited") > -1) {gameCode = urladi.split("=").pop();}
-  console.log(gameCode)
+  console.log(gameCode);
 
   db.collection('create_game').where('game_code', '==', gameCode).onSnapshot(snapshot => {
   snapshot.docs.forEach(doc => {
     var admin_id = doc.data().admin;
+    console.log(admin_id);
     db.collection('users').where('user_id', '==', admin_id).onSnapshot(snapshot => {
   snapshot.docs.forEach(doc => {
     

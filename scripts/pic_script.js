@@ -10,15 +10,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-// $("#imageUpload").change(function () {
-//     // aria-expanded="false"
-//     // document.getElementById("collapseExample").setAttribute("class", "collapse");
-//     // document.getElementById("uploadpic").innerHTML = "Well done! You got 3 bonus points!!!";
-//     readURL(this);
-//     $('#switch3').prop('disabled' , true);
-//     $('.form-inline').prop('disabled' , true);
 
-// });
 
 function saveImg(file)
 {
@@ -42,21 +34,7 @@ $('#imageUpload').on("change", function(event){
 
 function uploadFile(selectedfile)
 {
-  // var filename = 'ttt';
-  // // Create a root reference
-  // var storageRef = storage.ref('/images/' + filename);
-  // var uploadTask = storageRef.put(selectedfile);
-
-  // uploadTask.on('state_changed', function(snapshot){
-
-  // }, 
-  // function(error){
-
-  // },
-  // function(){
-  //   var downloadURL = uploadTask.snapshot.downloadURL;
-  //   console.log(downloadURL);  
-  // });
+  
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userid = user.uid;

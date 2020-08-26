@@ -63,22 +63,26 @@ File: Main Css File
   content: counter(stepNum);
   font-family: inherit;
   font-weight: 700;
+  
 }
 .multi-steps > li.is-active:after, .multi-steps > li.is-active ~ li:after {
   background-color: #ededed;
+  font-weight: bold;
 }
 
 .multi-steps {
   display: table;
   table-layout: fixed;
   width: 100%;
+  font-weight: bold;
 }
 .multi-steps > li {
   counter-increment: stepNum;
   text-align: center;
   display: table-cell;
   position: relative;
-  color: #CE6A86;
+  color: #222;
+  font-weight: bold;
 }
 .multi-steps > li:before {
   content: "\f00c";
@@ -96,32 +100,38 @@ File: Main Css File
   font-weight: bold;
   border-width: 2px;
   border-style: solid;
-  border-color: #CE6A86;
+  border-color: #222;
   border-radius: 50%;
+  font-weight: bold;
 }
 .multi-steps > li:after {
   content: "";
   height: 2px;
   width: 100%;
-  background-color: #CE6A86;
+  background-color: #222;
   position: absolute;
   top: 16px;
   left: 50%;
   z-index: -1;
+  font-weight: bold;
 }
 .multi-steps > li:last-child:after {
   display: none;
+  font-weight: bold;
 }
 .multi-steps > li.is-active:before {
   background-color: #fff;
-  border-color: #CE6A86;
+  border-color: #222;
+  font-weight: bold;
 }
 .multi-steps > li.is-active ~ li {
-  color: #808080;
+  color: #1d504a
+;
 }
 .multi-steps > li.is-active ~ li:before {
   background-color: #ededed;
   border-color: #ededed;
+  font-weight: bold;
 }
 
 /*Adi, can you please implement the best font ever: 
@@ -521,7 +531,7 @@ strong {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 9px;
+  font-size: 14px;
 }
 
 .notification-list {
@@ -4115,13 +4125,14 @@ input[switch="purple"]:checked+label {
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
+  /* font-weight: normal; */
   font-size: 20px;
-  line-height: 44px;
+  line-height: 30px;
   /* or 122% */
 
   text-align: center;
   letter-spacing: 0.18px;
-
+  /* color: black; */
   color: #CC5CA2;
 }
 
@@ -4164,13 +4175,14 @@ input[switch="purple"]:checked+label {
   border: none;
 }
 
-.inst{
+#gallery_div > img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 92px;
   height: 92px;
 }
+
 
 .vid{
   max-width: 100%;

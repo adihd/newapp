@@ -21,10 +21,20 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="assets/css/ribbon.css" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
+<style>
+  
+td {
+  word-break: break-all;
+}
+</style>
 </head>
 
 <body>
+<style>
+          body{
+          background-color: #3B8B82;
+        }
+</style>
     <div class="page-wrapper">
         <!-- Page Content-->
         <br>
@@ -38,7 +48,7 @@
                             <div class="countdown">
 
                                 <a class="ribbon-content">
-                                    <h4>Welcome to <span id="challengename" style="color:pink;"></span> challenge
+                                    <h4>Welcome to "<span id="challengename" ></span>" challenge
                                     </h4>
                                   
                                 </a>
@@ -50,14 +60,14 @@
             <div class="card">
 
                 <div class="card-body donut">
-                    <h5 class="mt-0">The buddy system</h5>
+                    <h5 id="demo" class="mt-0">The buddy system</h5>
 
-                    <p class="text-muted font-13 mb-4">Once your friends joins, you can select your buddy to compete
+                    <p  id="demop" class="text-muted font-13 mb-4">Once your friends joins, you can select your buddy to compete
                         with against the rest of the couples. Every day you
-                        both do the habbit, you will get bonus points.</p>
+                        both do the habit, you will get bonus points.</p>
 
 
-                    <div class="row" style="display:flex;align-items:center;justify-content:center;">
+                    <div id="pairs_selection_div" class="row" style="display:flex;align-items:center;justify-content:center;">
 
                         <div class="dropdown mo-mb-2" style="width:60%;">
                             <div>
@@ -71,8 +81,8 @@
                         </div>
 
                         <!-- href="forms-prize.html"     type="button"               -->
-                        <button onclick="pair_buddies()" class="btn btn-primary btn-lg"><i class="mdi mdi-crown"></i>
-                            PairUp
+                        <button id="pairUp" onclick="pair_buddies()" class="btn btn-primary "><i class="mdi mdi-crown"></i>
+                            Pair Up
                         </button>
                     </div>
 
@@ -80,6 +90,7 @@
 
 
                 </div>
+                <div style="overflow-x:auto;">
                 <table class="table mb-2">
                     <thead>
                         <tr>
@@ -93,6 +104,7 @@
 
                     </tbody>
                 </table>
+                </div>
             </div>
 
 

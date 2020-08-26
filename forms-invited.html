@@ -99,6 +99,15 @@
 
 <body class="enlarge-menu">
   <div class="page-wrapper">
+    <div class="container-fluid">
+    <br /><br />
+    <ul class="list-unstyled multi-steps">
+      <li>Sign Up</li>
+      <li>Challenge</li>
+      <li class="is-active">Habit</li>
+    </ul>
+  </div>
+
     <!-- Page Content-->
     <div class="">
       <br>
@@ -109,16 +118,16 @@
 
           <div class="card">
             <div class="card-body">
-              <ul class="list-unstyled multi-steps">
+              <!-- <ul class="list-unstyled multi-steps">
     <li>Sign Up</li>
     <li>Challenge</li>
     <li class="is-active">Habbit</li>
-  </ul>
+  </ul> -->
               <!-- <h4>Welcome to <span id="challengename" style="color:pink;"></span> challenge</h4> -->
-              <h3 class="text-center m-0 invited"> <span id="adminname"></span> invited you to join the challenge!
+              <h3 class="text-center m-0 invited" style="font-weight: 500; font-size: 16px;"> <span id="adminname"></span> invited you to join the challenge!
               </h3>
               <br>
-              <h5 class="mt-0">Choose your habit</h5>
+              <h5 class="mt-0 ml-3">Choose your habit</h5>
               <div class="col-sm-4" >
                 <!-- <div class="dropdown mo-mb-2">
                                     <div>
@@ -139,7 +148,7 @@
                     <label class="habitopti btn btn-warning" style="width:96px";>
                       <input class="optionhabit" type="radio" name="options" id="paint_habit" autocomplete="off">
                       <img src="cute-img/044-palette.png" alt="" class="thumb-md mr-1 mb-2">
-                      <br>
+                      <!-- <br> -->
                       <p>Paint</p>
                     </label>
                     <label class="habitopti btn btn-warning" style="width:96px";>
@@ -176,14 +185,14 @@
 
 
               <br>
-              <h5 class="mt-0">Choose The prize</h5>
+              <h5 class="mt-0 ml-3">Choose The prize</h5>
 
               <div class="col-sm-4">
                 <div class="input-field">
                   <div class="dropdown mo-mb-2">
                     <div>
                       <select id="prize" class="custom-select" onchange="coosePrize(this)">
-                        <option selected="">Prize</option>
+                        <option selected="">Choose</option>
                         <option value="1">Pizza</option>
                         <option value="2">Hamburger</option>
                         <option value="3">Movie&amp;Popcorn</option>

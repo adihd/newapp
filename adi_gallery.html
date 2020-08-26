@@ -39,69 +39,67 @@
 	<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous">
 
 	</script>
-      <style>
-        /* body {
-            position: relative;
-            background: #475766;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            z-index: 0;
-            /* height: 100vh; */
+	<style>
 
-        .navbar-nocolor {
-            background-color: rgba(255, 255, 255, 0);
-            border-style: none;
-            /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/rip.svg) bottom center; */
-        }
 
-        .apppage {
-            background: url(curve.svg) top center;
-            background-size: contain;
-            background-repeat: no-repeat;
-
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="adi_css.css">
+	</style>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="adi_css.css">
 
 
 
-<!-- </head> -->
+	<!-- </head> -->
 </head>
 
 <body style="visibility: hidden" data-keep-enlarged="true">
 	<!-- Top Bar Start -->
-    <!-- Top Bar End -->
-    <!-- header ends -->
-      <div style="visibility: visible" id="loader" class="center"></div> 
+	<!-- Top Bar End -->
+	<!-- header ends -->
+	<div style="visibility: visible" id="loader" class="center"></div>
 
-    <!-- Adi.Start icon Bar footer -->
-    <!-- Adi.Start icon Bar footer -->
-    <div class="icon-bar">
-      <a href="adi_home3.html"><i class="fa fa-home"></i></a>
-      <a  href="prize-tom.html"><i class="fa fa-trophy"></i></a>
+	<!-- Adi.Start icon Bar footer -->
+	<!-- Adi.Start icon Bar footer -->
+  <div class="home-noti mb-4 pl-4 pb-2"><button type="button" class="btn btn-secondary home-noti-btn" data-container="body" data-toggle="popover" data-placement="top" data-content="your buddy just poked you! haha">
+top
+</button></div>
+
+	<div class="icon-bar">
+
+      
+      <a class="notification" href="adi_home3.html">
+			<i class="fa fa-home"></i>
+      <span class="hide badge badge-danger badge-pill noti-icon-badge">!</span>
+      </a>
+      <a class="notification" href="prize-tom.html"><i class="fa fa-trophy"></i>
+      <span id="placeUp" class="hide badge badge-danger badge-pill noti-icon-badge"> 👍🏻 </span>
+      </a>
       <!-- <a href="prog.html"><i class="fas fa-comments"></i></a> -->
-      <a href="trygame.html"><i class="fa fa-gamepad"></i></a>
+      <a class="notification" href="trygame.html"><i class="fa fa-gamepad"></i>
+      <span class="badge badge-danger badge-pill noti-icon-badge">💡</span>
+      </a>
       <!-- <a href="#"><i class="fa fa-trash"></i></a>  -->
-      <a class="active" href="adi_gallery.html"><i class="fa fa-picture-o"></i></a>
+      <a class="notification" class="active" href="adi_gallery.html"><i class="fa fa-picture-o"></i>
+      <span class="hide badge badge-danger badge-pill noti-icon-badge">!</span>
+      </a>
+                                       
+		
     </div>
     <!-- Adi.End icon Bar footer-->
     <!-- Adi.End icon Bar footer-->
+    
 
     <!-- Page page-wrapper-->
 <div class="page-wrapper apppage pl-4 pr-4">
         <!-- Page Content-->
+        <!-- ////////////// navbar -->
       <nav class="pl-1 pr-1 navbar navbar-dark navbar-nocolor">
-            <a class="navbar-brand" href="#">
-                <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                BetterYou
-            </a>
+<a class="navbar-brand" href="#">
+                <img src="cute-img/sloth.png" width="50" height="50" class="" alt="">     <b>BetterYou</b></a>
             <ul class="nav navbar-dark navbar-nav navbar-right">
-                <li><a class="text-white" href="#"><i class="fas fa-sign-in-alt"></i></span> Logout</a></li>
+                <li><a class="text-white" href="#"><i class="fas fa-sign-in-alt"></i></span> <b>Logout</b></a></li>
             </ul>
         </nav>
+         <!-- ////////////// navbar -->
         <div class="">
             <!-- Page fluid-->
             <!-- !start app capsule -->
@@ -135,150 +133,51 @@
                                 src="cute-img/033-portrait.png"
  alt="" class="thumb-xl mr-1">
  <br>
-                   <h4 id="the_big_prize" class="card-title mt-0 text-success">The big prize - Pizza
-                                    Night :)</h4>
-                      <h4 class="card-title mt-0 text-success"> gallery</h4>
+
+                      <h4 class="card-title text-success"> gallery</h4>
 
 
 
                             </div>
                 <div class="text-center">
-                  <!-- <img
-                    src="assets/images/prizegal.png"
-                    alt=""
-                    class="thumb-xxl mr-1"
-                  /> -->
-
-       <br>        
-<table>
-  <thead>
 
 
-  </thead>
+       <br> 
+       <div class="col-12 p-0">
+                <div id="gallery_div" class="p-0">
+
+       </div>
+       </div>
+<!-- <table>
   <tbody>
     <tr id="gallery_div">
-      <img src="img-game/piano.png" class="inst"
+      <img src="img-game/piano.png"
                             alt="image"</img>
-      <img src="img-game/piano.png" class="inst"
+      <img src="img-game/piano.png"
                             alt="image"</img>
-      <img src="img-game/piano.png" class="inst"
+      <img src="img-game/piano.png"
                             alt="image"</img>
-      <img src="img-game/piano.png" class="inst"
+      <img src="img-game/piano.png"
                             alt="image"</img>
-      <img src="img-game/piano.png" class="inst"
+      <img src="img-game/piano.png"
                             alt="image"</img>
                             </tr>
                             </tbody>
-    </table> 
-    <br>
-                  <!-- <div
-                    class="tab-pane fade show active"
-                    id="feed"
-                    role="tabpanel"
-                  >
-                    <div class="mt-2 pr-2 pl-2">
-                      <div class="row">
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/1.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/2.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/3.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/4.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/5.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/6.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/1.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/2.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/3.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/4.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/5.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                        <div class="col-4 mb-2">
-                          <img
-                            src="assets2/assets/img/sample/photo/6.jpg"
-                            alt="image"
-                            class="imaged w-100"
-                          />
-                        </div>
-                      </div>
-                    </div>
+    </table>  -->
+       
 
-                  </div> -->
-                  <!-- * feed -->
+
                 </div>
-                <div class="pr-2 pl-2">
-                      <a href="#" class="btn btn-primary btn-block"
-                        >More Photos</a
-                      >
-                    </div>
+              
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <!-- Page fluid-->
 
     <!-- Page Content-->
@@ -325,6 +224,8 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-functions.js"></script>
 
@@ -347,11 +248,12 @@
       const functions = firebase.functions();
     </script>
 
-    <!-- <script src="assets/js/app.js"></script> -->
-    <!-- <script src="scripts/points.js"></script> -->
+    
     <script src="scripts/auth.js"></script>
-    <script src="scripts/prize.js"></script>
-
+    <script src="scripts/gallery.js"></script>
+   
+    <script src="adi_ui.js"></script>
+    <!-- <script src="loading.js"></script> -->
     <script>
       // popover
       $(function () {

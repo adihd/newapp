@@ -94,8 +94,8 @@ function setHabitprize() {
         prize_idea: inputprize,
         game_code : gameCode
       }).then(() => {
-        window.location.replace("start-game.html");
-        // console.log("habit")
+        window.location.replace("start-game.html")
+        // else {window.location.replace("start-game.html");}
       });
     });
   });

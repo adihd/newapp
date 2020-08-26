@@ -32,6 +32,7 @@
      <script src="dist/emojionearea.min.js">
 
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <style>
         * {
             font-family: Arial, Helvetica, san-serif;
@@ -55,6 +56,7 @@
         .emojionearea-standalone {
             float: right;
         }
+
 </style>
 
 
@@ -63,6 +65,15 @@
 <body>
     <div class="page-wrapper">
         <!-- Page Content-->
+  <div class="container-fluid">
+    <br /><br />
+    <ul class="list-unstyled multi-steps" style="font-weight: bold;">
+      <li class="is-active">Sign Up</li>
+      <li>Challenge</li>
+      <li >Habit</li>
+      <!-- <li>Finish</li> -->
+    </ul>
+  </div>
         <div class="container-fluid">
             <br>
             <div class="card">
@@ -71,11 +82,7 @@
 
                     <div class="card-body" style="
                     padding-bottom: 0px;">
-<ul class="list-unstyled multi-steps">
-    <li class="is-active">Sign Up</li>
-    <li>Challenge</li>
-    <li>Habbit</li>
-  </ul>
+
                         <h5 class="mt-0">Sign Up</h5>
                         <a href="#" class="hide-this" id="logout">Logout</a>
 
@@ -133,7 +140,7 @@
                                                     class="fas fa-lock"></i></span>
                                         </div>
                                         <input type="password" class="form-control" id="signup-password"
-                                            placeholder="Enter password" required />
+                                            placeholder="Enter password (at least 6 characters)" required />
                                     </div>
                                 </div>
 

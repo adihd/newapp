@@ -1,16 +1,14 @@
 //get reference from html
 const pairs_point_status = document.querySelector('#pairs_point_status'); 
 
-const user_name = document.querySelector('#user_name_at_nav');
+// const user_name = document.querySelector('#user_name_at_nav');
 
-const prize = document.querySelector('#the_big_prize');
+const winPrize = document.querySelector('#the_big_prize');
 
-let pairsSet = new Set();
-
-// const temp_userid = "tomID";
+const pairsSet = new Set();
 
 let userid = ""
-
+var finishpair = false;
 
 const setupID = (user) => {
   if (user) {
@@ -24,7 +22,9 @@ const setupID = (user) => {
 
 // userid = temp_userid;
 
-function renderPairs(doc){
+function renderPairs(doc, g_code, user_name){
+    if (doc.data().game_code != g_code) return;
+    if (!doc.data().paired) return;
 
     //creats the pair names in the list
     let pair = document.createElement('div');
@@ -42,6 +42,7 @@ function renderPairs(doc){
     pairsSet.add(doc.data().name);
     pairsSet.add(doc.data().partner_name);
     text.innerHTML = doc.data().name + " &amp; " + doc.data().partner_name;
+    if (doc.data().name == user_name || doc.data().partner_name == user_name)text.style.color = "#CC5CA2";
     span.appendChild(text);
     pair.appendChild(span);
     pairs_point_status.appendChild(pair);
@@ -62,11 +63,10 @@ function renderPairs(doc){
     progress.className = "progress-bar bg-pink";
     var size = doc.data().game_points / doc.data().max_points;
     size = size * 100;
-    console.log(size);
     progress.setAttribute("style", "width:" + size + "%; border-radius:5px;");   
     bar_out.appendChild(progress);
     pairs_point_status.appendChild(bar_out);   
-   
+   finishpair = true;
 }
 
 function setPictureSrc(doc)
@@ -85,52 +85,98 @@ function setPictureSrc(doc)
 
 function setUp(userid)
 {
-  let prize = new Map()
-  prize.set("Pizza", 0);
-  prize.set("Hamburger", 0);
-  prize.set("Movie&Popcorn", 0);
+  db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
+  snapshot.docs.forEach(doc => {
+    var g_code = doc.data().game_code;
+    var user_n = doc.data().name;
+    db.collection('users').doc(doc.id).update({placeDown: false});
+    db.collection('users').doc(doc.id).update({placeUp: false});
+    callByOrder(g_code, user_n, userid);
+      });
+  })
+
+    db.collection('users').onSnapshot(function(snapshot){
+      snapshot.docChanges().forEach(function(change){
+        db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
+          snapshot.docs.forEach(doc => {
+            // var g_code = change.doc.data().game_code;
+            // var user_n = change.doc.data().name;
+            var g_code = doc.data().game_code;
+            var user_n = doc.data().name;
+            console.log("change");
+          
+            callByOrder(g_code, user_n, userid);
+          });
+        })
+    });
+  })
+
+  
 
   //set prize
    db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
           snapshot.docs.forEach(doc => {
           var g_code = doc.data().game_code;
+          let prize = new Map()
+          prize.set("Pizza", 0);
+          prize.set("Hamburger", 0);
+          prize.set("Movie&Popcorn", 0);
           db.collection('users').where("game_code", "==",g_code).get().then((snapshot) =>{
-    snapshot.docs.forEach(doc => {
-      if(doc.data().prize_idea == "Pizza") prize.set("Pizza", prize.get("Pizza") + 1);
-      console.log(prize.get("Pizza"));
-         
-         
-    });
-    
-  })
-          
-        
-          });
-          })
-
-  //get users from the same game of the conected user, that are paired
- db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
           snapshot.docs.forEach(doc => {
-          var g_code = doc.data().game_code;
-          db.collection('users').where("paired", "==",true).where("game_code", "==",g_code).get().then((snapshot) =>{
-    snapshot.docs.forEach(doc => {
-      if(!pairsSet.has(doc.data().name)) renderPairs(doc);
-         
-         
-    });
-    
-  })
-          
+              if(doc.data().prize_idea == "Pizza") prize.set("Pizza", prize.get("Pizza") + 1);
+              if(doc.data().prize_idea == "Movie&Popcorn") prize.set("Movie&Popcorn", prize.get("Movie&Popcorn") + 1);
+              if(doc.data().prize_idea == "Hamburger") prize.set("Hamburger", prize.get("Hamburger") + 1);
+              
+              var winnigPrize = findThePrize(prize);
+              winPrize.innerHTML = "The big prize - " + winnigPrize + " :)";
+              console.log(winnigPrize);
+                });
+                
+              })
         
           });
+         
           })
 
-          //not realtime update
-  db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
-      snapshot.docs.forEach(doc => {
-        user_name.textContent = doc.data().name;
 
-      });
+
+
+
+}
+
+function findThePrize(prize){
+  var max = 0;
+  var wininigPrize = "";
+  for (let [key, value] of  prize.entries()) {
+    if (value > max)
+    {
+      max = value;
+      wininigPrize = key;
+    }
+  }
+  console.log(wininigPrize);
+  return wininigPrize; 
+}
+
+function callByOrder(g_code, user_n, userid)
+{
+      pairs_point_status.innerHTML= "";
+      pairsSet.clear();
+      console.log(pairsSet.size + " set size");
+
+      db.collection('users').orderBy('place', 'asc').onSnapshot(snapshot =>{
+      snapshot.docs.forEach(doc => {
+        
+        if(!pairsSet.has(doc.data().name) && doc.data().paired && doc.data().game_code == g_code && doc.data().user_id != userid)
+        {
+          console.log(doc.data().game_points + " " + doc.data().name + " " + doc.data().place)
+
+          renderPairs(doc, g_code, user_n);
+        } 
+         
+         
+    }); 
+    
   })
 }
   
