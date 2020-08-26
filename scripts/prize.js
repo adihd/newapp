@@ -87,6 +87,10 @@ function setUp(userid)
 {
   db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
   snapshot.docs.forEach(doc => {
+    if(doc.data().new_tip) document.getElementById("newTip-prize").style.visibility = "visible";
+      else document.getElementById("newTip-prize").style.visibility = "hidden";
+       if(doc.data().new_pic) document.getElementById("newPic-prize").style.visibility = "visible";
+      else document.getElementById("newPic-prize").style.visibility = "hidden";
     var g_code = doc.data().game_code;
     var user_n = doc.data().name;
     db.collection('users').doc(doc.id).update({placeDown: false});

@@ -9,9 +9,23 @@ myHabit = 0;
   const setupID = (user) => {
   if (user) {
     userid = user.uid;
+    db.collection('users').doc(userid).update({new_tip:false})
+
+      db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
+      snapshot.docs.forEach(doc => {
+        
+        document.getElementById("placeUp-game").style.visibility = "hidden";
+        document.getElementById("placeDown-game").style.visibility = "hidden";
+        if(doc.data().placeUp) document.getElementById("placeUp-game").style.visibility = "visible";
+        if(doc.data().placeDown)document.getElementById("placeDown-game").style.visibility = "visible";
+      });
+  })
+    
+  
 
     db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {
+
          document.getElementById("gamePoints").innerHTML = "GAME POINTS : " + doc.data().game_points;
          console.log("hi adi");
           listGet(doc);

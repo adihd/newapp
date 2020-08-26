@@ -7,13 +7,20 @@ const game_name = document.querySelector('#challengeName');
 //////////////////////////////////////////////////////////////////////
 //upload pic only frontend
 $(function () {
-  
+
     $(":file").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
+            $('#uploadFileButton').attr("disabled",true);
+            imageUpload
+            $('#imageUpload').attr("disabled",true);
             reader.onload = imageIsLoaded;
             reader.readAsDataURL(this.files[0]);
+           
+           
         }
+         
+      
 
         var user_id = firebase.auth().currentUser.uid;
         var docRef = db.collection("users").doc(user_id);
@@ -23,6 +30,30 @@ $(function () {
           db.collection("users").where("game_code","==",g_code).get().then(snap1=>{
            snap1.docs.forEach(doc => {
             db.collection('users').doc(doc.id).update({new_pic: true});
+            picBonus(doc, user_id);
+                 db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
+      snapshot.docs.forEach(doc => {
+      var g_code = doc.data().game_code;
+      var user_n = doc.data().name;
+      var counter = 0;
+      db.collection('users').orderBy('game_points', 'desc').onSnapshot(snapshot =>{
+        snapshot.docs.forEach(doc => {
+          if(!setPairs.has(doc.data().name) && doc.data().paired && doc.data().game_code == g_code && doc.data().user_id != userid)
+          {
+            
+            counter++;
+            
+            setPlace(doc, g_code, counter, userid, doc.data().partner_id);
+            setPairs.add(doc.data().name);
+            console.log(doc.data().name);
+            setPairs.add(doc.data().partner_name);
+            console.log(doc.data().partner_name);
+          }      
+      });
+      }) 
+    });
+  })
+              
            });
          });
           
@@ -91,6 +122,7 @@ function markAsDone() {
     });
   })
 
+    console.log("markAsDone");
      db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {
       var g_code = doc.data().game_code;
@@ -160,6 +192,24 @@ function upgradePoints(doc){
 
 }
 
+function picBonus(doc, user_id){
+  if (doc.id != user_id ) return;
+  var p = doc.data().game_points + 5;
+  
+  db.collection('users').doc(doc.id).update({game_points: p}); 
+
+  //update partner points and status of partner
+  db.collection('users').where('user_id', '==', userid).get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+       var par_id = doc.data().partner_id;
+       db.collection('users').doc(par_id).update({game_points:p}); 
+      
+      
+    });
+})
+
+}
+
 function setCountDown(doc)
 {
   var str = doc.data().start_date;
@@ -220,7 +270,6 @@ function setUp(userid)
       snapshot.docs.forEach(doc => {
         
         document.getElementById("placeUp").style.visibility = "hidden";
-        placeDown
         document.getElementById("placeDown").style.visibility = "hidden";
         if(doc.data().placeUp) document.getElementById("placeUp").style.visibility = "visible";
         if(doc.data().placeDown)document.getElementById("placeDown").style.visibility = "visible";
@@ -454,7 +503,7 @@ function setPlace(doc, g_code, counter, useridd, par_id)
 {
   
   var curPlace = doc.data().place;
-  console.log("curPlace " + curPlace);
+  console.log("curPlace " + curPlace + "name" + doc.data().name);
   console.log("counter " + counter);
    
   if (counter < curPlace && (doc.data().user_id == useridd || doc.data().partner_id == par_id))

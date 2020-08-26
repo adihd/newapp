@@ -26,11 +26,23 @@ month.set("December12", "12");
 
 function setUpGallery(userid)
 {
-    db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
+   db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
+      snapshot.docs.forEach(doc => {
+        
+        document.getElementById("placeUp").style.visibility = "hidden";
+        document.getElementById("placeDown").style.visibility = "hidden";
+        document.getElementById("newTip-gal").style.visibility = "hidden"
+        if(doc.data().placeUp) document.getElementById("placeUp").style.visibility = "visible";
+        if(doc.data().placeDown)document.getElementById("placeDown").style.visibility = "visible";
+        if(doc.data().new_tip) document.getElementById("newTip-gal").style.visibility = "visible";
+      });
+  })
+  
+    db.collection('users').where('user_id', '==', userid).get().then((snapshot) =>{
       snapshot.docs.forEach(doc => {
             var game_code = doc.data().game_code;
             db.collection('users').doc(doc.id).update({new_pic: false});
-            db.collection('create_game').where('game_code', '==', game_code).onSnapshot(snapshot =>{
+            db.collection('create_game').where('game_code', '==', game_code).get().then((snapshot) =>{
               snapshot.docs.forEach(doc => {
                     var startDate = doc.data().start_date;
                     uploadToG(startDate, doc)

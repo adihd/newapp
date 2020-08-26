@@ -64,6 +64,9 @@ auth.onAuthStateChanged(user => {
        snap.docs.forEach(doc => {
          if(doc.data().new_pic) document.getElementById("newPic").style.visibility = "visible";
              else document.getElementById("newPic").style.visibility = "hidden";
+          if(doc.data().new_tip) document.getElementById("newTip").style.visibility = "visible";
+      else document.getElementById("newTip").style.visibility = "hidden";
+          changeDate(doc);
        })})
 
 
@@ -124,7 +127,7 @@ signupForm.addEventListener('submit', (e) => {
       game_code: gameCode,
       game_points: 0,
       habit: "",
-      max_points: 750,
+      max_points: 960,
       partner_id: "",
       partner_name: "",
       user_id: cred.user.uid,
@@ -136,6 +139,8 @@ signupForm.addEventListener('submit', (e) => {
       placeUp:false,
       placeDown:false,
       new_pic:false,
+      today:getTodayString(),
+      new_tip: false,
       mygame: bigList1
     });
     
@@ -147,6 +152,37 @@ signupForm.addEventListener('submit', (e) => {
 
   });
 });
+
+function changeDate(doc)
+{
+  if(doc.data().today == getTodayString()) return;
+  
+  db.collection('users').doc(doc.id).update({
+
+      my_status: false,
+      partner_status:false,
+      today:getTodayString(),
+      new_tip:true,
+    });
+
+}
+
+function getTodayString()
+{
+  Date.prototype.yyyymmdd = function() {
+  var mm = this.getMonth() + 1; // getMonth() is zero-based
+  var dd = this.getDate();
+
+  return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('');
+  };
+
+  var date = new Date();
+  return date.yyyymmdd();
+}
+
 ////////////sign-up-new-end
 
 // // listen for auth status changes תראה אם המשתמש מתחבר או 

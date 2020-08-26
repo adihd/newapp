@@ -65,7 +65,8 @@ function pair_buddies()
   
    db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
   snapshot.docs.forEach(doc => {
-        db.collection('users').doc(doc.id).update({partner_name: buddy, paired: true})
+        
+        if(buddy != "") db.collection('users').doc(doc.id).update({partner_name: buddy, paired: true})
         cur_name = doc.data().name;
 
   });
@@ -73,6 +74,7 @@ function pair_buddies()
 
   db.collection('users').where("name", "==", buddy).get().then((snapshot) =>{
   snapshot.docs.forEach(doc => {
+        if(buddy != "") {
         db.collection('users').doc(doc.id).update({partner_name: cur_name, partner_id: userid, paired: true})
         par_id = doc.data().user_id;
 
@@ -82,6 +84,7 @@ function pair_buddies()
         
           });
           })
+      }
   });
   })
 
