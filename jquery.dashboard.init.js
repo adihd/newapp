@@ -1,12 +1,4 @@
-/**
- * Theme: Amezia - Responsive Bootstrap 4 Admin Dashboard
- * Author: Themesbrand
- * Dashboard
- * Module/App: Flot-Chart
- */
 
-
-//  Morris Area chart
 
 $( function () {
     "use strict";

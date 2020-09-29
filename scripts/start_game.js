@@ -2,7 +2,7 @@ const pair_selection = document.querySelector('#pairs_selection');
 const table = document.querySelector('#tbl');
 
 const game_name = document.querySelector('#challengename');
-
+var adifinishstart = false;
 
 var buddy = "";
 
@@ -87,8 +87,6 @@ function pair_buddies()
       }
   });
   })
-
-  // window.setTimeout(function(){ window.location.replace("start-game1.html");}, 500);
 }
 
 
@@ -183,6 +181,7 @@ function  addPairsToList(doc, c)
   })
           });
           })
+          adifinishstart = true
 }
 
 

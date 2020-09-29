@@ -4,20 +4,26 @@ const user_image_place = document.querySelector('#imagePreview');
 
 const game_name = document.querySelector('#challengeName');
 
+var adifinishhome = false;
+
+
+
 //////////////////////////////////////////////////////////////////////
 //upload pic only frontend
 $(function () {
 
     $(":file").change(function () {
         if (this.files && this.files[0]) {
-            var reader = new FileReader();
+            
             $('#uploadFileButton').attr("disabled",true);
-            imageUpload
             $('#imageUpload').attr("disabled",true);
+            document.getElementById("uploadFileButton").disabled = true;
+            document.getElementById("imageUpload").disabled = true;
+            $("#uploadFileButton").hide();
+            var reader = new FileReader();
             reader.onload = imageIsLoaded;
             reader.readAsDataURL(this.files[0]);
-           
-           
+            
         }
          
       
@@ -64,6 +70,10 @@ $(function () {
 function imageIsLoaded(e) {
   var userImg = document.querySelector('#imagePreview');
   userImg.style = "background-image: url(" + e.target.result + ");";
+  $('#uploadFileButton').attr("disabled",true);
+  $('#imageUpload').attr("disabled",true);
+  document.getElementById("uploadFileButton").disabled = true;
+  document.getElementById("imageUpload").disabled = true;
 };
 // the end of : upload pic only frontend
 //////////////////////////////////////////////////////////////////////
@@ -79,13 +89,10 @@ const setupID = (user) => {
      db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
     snapshot.docs.forEach(doc => {
          if(doc.data().my_status) setPictureUser();
-         if(doc.data().partner_status) setPicturePartner();
-         
-         
-    });
-    
+         if(doc.data().partner_status) setPicturePartner(); 
+    });   
+    adifinishhome = true;
   })
-    
     
   } else {
     userid = "";
@@ -108,22 +115,25 @@ month.set("11",  "November");
 month.set("12", "December");
 
 
-// var p_name = document.getElementById("partner_id").innerText; //to find the right pair
-// p_name = p_name.split(" ")[1];
-
 function markAsDone() {
 
    
     db.collection('users').where('user_id', '==', userid).get().then((snapshot) =>{
+      
     snapshot.docs.forEach(doc => {
+      
       db.collection('users').doc(doc.id).update({my_status: true});
       upgradePoints(doc);
         
     });
   })
 
-    console.log("markAsDone");
-     db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
+  setTimeout(sideFunction, 3000);
+}
+
+function sideFunction()
+{
+      db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {
       var g_code = doc.data().game_code;
       var user_n = doc.data().name;
@@ -137,21 +147,21 @@ function markAsDone() {
             
             setPlace(doc, g_code, counter, userid, doc.data().partner_id);
             setPairs.add(doc.data().name);
-            console.log(doc.data().name);
+            
             setPairs.add(doc.data().partner_name);
-            console.log(doc.data().partner_name);
+           
           }      
       });
       }) 
     });
   })
-
 }
 
 var oneP = 10;
 var twoP = 20;
 
 function setPointsInHtml(doc){
+
   document.getElementById("myPoints").innerHTML = doc.data().game_points;
   if(doc.data().place == 5) document.getElementById("myPlace").innerHTML = "--";
   else document.getElementById("myPlace").innerHTML = doc.data().place;
@@ -171,11 +181,6 @@ function upgradePoints(doc){
   {
     p = p + oneP;
   }
-
-  // if(!doc.data().my_status && doc.data().partner_status)
-  // {
-  //   p = p + oneP;
-  // }
   
   db.collection('users').doc(doc.id).update({game_points: p}); 
 
@@ -210,7 +215,7 @@ function picBonus(doc, user_id){
 
 }
 
-function setCountDown(doc)
+function setCountDown(doc, userid)
 {
   var str = doc.data().start_date;
 
@@ -227,9 +232,6 @@ function setCountDown(doc)
   var countDownDate = new Date(the_start_date);
   countDownDate.setDate(countDownDate.getDate() + 25);
   countDownDate = countDownDate.getTime();
-
-  // Update the count down every 1 second
-  var x = setInterval(function() {
 
   // Get today's date and time
   var now = new Date().getTime();
@@ -249,13 +251,16 @@ function setCountDown(doc)
 
   // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = days;
+  db.collection('users').doc(userid).update({ dayIndex:25 - days});  
+
+ 
 
   // If the count down is finished, write some text
   if (distance < 0) {
-    clearInterval(x);
     document.getElementById("demo").innerHTML = "0";
   }
-}, 1000);
+
+
 }
 
 
@@ -299,13 +304,14 @@ function setUp(userid)
 
 db.collection('users').where("user_id", "==", userid).get().then((snapshot) =>{
       snapshot.docs.forEach(doc => {
-
+        
       var g_code = doc.data().game_code;
       
       db.collection('create_game').where("game_code", "==" ,g_code).get().then((snapshot) =>{
       snapshot.docs.forEach(doc => {
       
-      setCountDown(doc)
+      setCountDown(doc, userid)
+     
          
          
     });
@@ -359,15 +365,14 @@ $(".myFriendButt").click(function () {
 
 // changing the ui of my chard
 function ChangeMyCard(myCardBool) {
-    // alert("my card");
-    // console.log("בדיקה");
     if (!myCardBool === false) {
         $('.txtchange').text("You can get extra points by uploading a picture.");
-                                      
-        // change the css and text of the button: no animation
-        // $('.myButt').text("undo").removeClass("btn-primary").addClass("btn-secondary");
         $('.myButt').attr("disabled",true);
+        document.getElementById("imageUpload").disabled = false;
+        document.getElementById("uploadFileButton").disabled = false;
         $("#uploadFileButton").removeClass("disabled").addClass("active");
+        $("#imageUpload").removeClass("disabled").addClass("active");
+      
      }
 
 
@@ -375,7 +380,6 @@ function ChangeMyCard(myCardBool) {
 
 // changing the ui of a friend card
 function ChangeFriendCard() {
-    // var userid = firebase.auth().currentUser.uid;
     
     $('.myFriendButt').text("Poke again!")
     $('.friendCard').css({
@@ -390,15 +394,13 @@ $(function () {
     $("[data-toggle=popover]").popover();
 });
 
-// poked your partner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Alert Modal Type
+// poked your partner!
 $(document).on('click', '#success', function (e) {
     swal(
         'Success',
         'You just <b style="color:green;">Poked</b> your partner!!!' ,
         'success'
-        // now make the button in another color!
-        // document.getElementById('').style.color = 'green';
+   
     )
         var user_id = firebase.auth().currentUser.uid;
         var docRef = db.collection("users").doc(user_id);
@@ -415,13 +417,14 @@ $(document).on('click', '#success', function (e) {
 });
 
 
+
 function setPictureUser()
 {
   var userid = firebase.auth().currentUser.uid;
-  // console.log(userid);
+  
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); 
   var yyyy = today.getFullYear();
   today = mm + dd + yyyy;
 
@@ -435,6 +438,11 @@ function setPictureUser()
 
     //user
     storageRef.child(path).getDownloadURL().then(function(url) {
+      $('#uploadFileButton').attr("disabled",true);
+      $('#imageUpload').attr("disabled",true);
+      document.getElementById("uploadFileButton").disabled = true;
+      document.getElementById("imageUpload").disabled = true;
+      $("#uploadFileButton").hide();
       var userImg = document.querySelector('#imagePreview');
       userImg.style = "background-image: url(" + url + ");";
         });
@@ -455,7 +463,6 @@ function setPicturePartner()
 
   db.collection('users').onSnapshot(function(snapshot){
     snapshot.docChanges().forEach(function(change){
-      console.log("change");
      db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {
       var g_code = doc.data().game_code;
@@ -501,9 +508,9 @@ let setPairs = new Set();
 
 function setPlace(doc, g_code, counter, useridd, par_id)
 {
-  
+  console.log("set place"); 
   var curPlace = doc.data().place;
-  console.log("curPlace " + curPlace + "name" + doc.data().name);
+  console.log("curPlace " + curPlace + " name " + doc.data().name + " game points" + doc.data().game_points);
   console.log("counter " + counter);
    
   if (counter < curPlace && (doc.data().user_id == useridd || doc.data().partner_id == par_id))
@@ -524,8 +531,3 @@ function setPlace(doc, g_code, counter, useridd, par_id)
 
    
 }
-
-
- 
-
-

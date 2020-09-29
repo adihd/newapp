@@ -4,17 +4,6 @@
 const game_code = document.querySelector('#game_code');
 
 
-
-
-// // saving data
-// form.addEventListener('submit', (e) => { // submit == click or enter
-//     e.preventDefault(); // prevent the refreshing of the page when clicking the button
-//     db.collection('create_game').add({ 
-//         name: form.name.value,
-//         city: form.city.value
-//     });
-// });
-
 var g_code = game_code.value = make_code(4);
 
 function make_code(length) {
@@ -44,23 +33,11 @@ function create_game()
       console.error("Error writing document: ", error);
   });
   window.document.location = "./forms-invited-create.html" + "?codeGame=" + g_code;
-  // window.location.replace("forms-invited-create.html");
+
 
 
 }
 
-// function setAdmin(userid)
-// {
-//   db.collection("create_game").where("game_code","==",g_code).doc(g_name).set({
-//      admin: userid
-//   }).then(function() {
-//       console.log("Document successfully written!");
-//   })
-//   .catch(function(error) {
-//       console.error("Error writing document: ", error);
-//   });
-
-// }
 
 
 //copy to clipboard func
@@ -78,13 +55,3 @@ $('.copyboard').on('click', function(e) {
 
   document.body.removeChild(textarea);
 })
-
-
-
-// db.collection("cities").doc("LA").set({
-//     name: "Los Angeles",
-//     state: "CA",
-//     country: "USA"
-// })
-
-// console.log(document.querySelector('#group-name'));

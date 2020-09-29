@@ -1,7 +1,6 @@
-// 0 defult 1 is yes 2 no
-// הגדרת משתנים  
-// הפלס הראשון הוא היום!
-// הגדרת משתנים  
+
+var adifinishgame = false;
+
 var bigList = [];
 var mydoc = 0;
 myHabit = 0;
@@ -22,12 +21,10 @@ myHabit = 0;
   })
     
   
-
     db.collection('users').where('user_id', '==', userid).onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {
 
          document.getElementById("gamePoints").innerHTML = "GAME POINTS : " + doc.data().game_points;
-         console.log("hi adi");
           listGet(doc);
           mydoc = doc;
           changeBoard();
@@ -41,19 +38,25 @@ myHabit = 0;
   } else {
     userid = "";
   }
+  adifinishgame = true;
 };
 
 function listGet(doc){
-  console.log("hiiiiiiii adi 2");
+  var dayindex = doc.data().dayIndex;
   var gameboard = doc.data().mygame;
   bigList = JSON.parse(gameboard);
   console.log(bigList);
-  
+  updatedate(dayindex)
+}
+
+function updatedate(num){
+  console.log(num);
+
 }
 
 function listSet(doc){
   var updatelist = bigList;
-  db.collection('users').doc(doc.id).update({mygame:updatelist}); 
+  db.collection('users').doc(doc.id).update({mygame:updatelist});
 }
 
 
@@ -99,27 +102,7 @@ console.log(arri);
 $("#bonus").on('click', function () {
   bonusPoints(globalBonus,bigList);
 })
-///////// //////////////////////////////////////////
-// function chest(tile) {
-//     changeUITile(tile, stone);
-//     $(tile).append("<div class='chest chest-closed'></div>");
-//     chestCount = 1;
-//     // sndEffects(0);
-//     $(".chest").click(function () {
-//         $(this).unbind();
-//         $(this).addClass('chest-open').removeClass('chest-closed');
-//         $(this).append("<img class='star' src='http://adrianpayne.me/game/assets/images/star.png' />");
-//         $(this).find('.star').animate({
-//             top: "-40px",
-//             opacity: "0"
-//         }, 800);
-//         $('.starcount').text(1);
-//         // speechText(chestText, 300);
-//         // sndEffects(1);
-//         // scoreCalc(chestPoints);
-//         // $(this).delay(200).fadeOut("slow");
-//     });
-// }
+
 
 $("#prize").on("click", function () {
     chest($(".tile00"));
@@ -132,31 +115,30 @@ $("#UI").on('click', function () {
 })
 
 function changeBoard() {
-    // bonusPoints();
+    
     for (list in bigList) {
         for (evar in bigList[list]) {
             changeUITile(bigList[list][evar])
-            // console.log("Adi");
+           
         }
     }
-    // console.log("ui");
+  
 }
 
 
 function reverseBoard() {
-    // bonusPoints();
+   
     for (list in bigList) {
         for (evar in bigList[list]) {
             reverseUITile(bigList[list][evar])
-            // console.log("Adi");
+            
         }
     }
-    // console.log("ui");
+   
 }
 
 function changeUITile(tileList) {
 
-    // console.log(tileList);
     // // removing all the classes
     $(tileList[2]).removeClass("grass").removeClass("fail").removeClass("done");
     // add class by number
@@ -175,7 +157,6 @@ function changeUITile(tileList) {
 
 function reverseUITile(tileList) {
 
-    // console.log(tileList);
     // // removing all the classes
     $(tileList[2]).removeClass("grass").removeClass("fail").removeClass("done");
     // add class by number
@@ -191,20 +172,14 @@ function reverseUITile(tileList) {
 
 }
 
-//מחכה שמישהו ילחץ על כפתור דן
-// $("#done").on('click', function () {
-//     // אם מישהו לוחץ על הכפתור דן אז מודפס דן ומופעלת הפונקציה 
-
-
-// })
 
 function donefunc(doc){
-  // console.
+  changeBoard();
   var stat = doc.data().my_status;
+  var day_index = doc.data().dayIndex;
   if (stat){
     scoreCalc(1);
-    console.log("done");
-    switch2one();
+    switch2one(doc ,day_index);
     
   }
 }
@@ -235,24 +210,21 @@ $("#print").on('click', function () {
 
 
 // פונקציה שאם לוחצים עליה משנה את האיבר ברשימה ל1                        
-function switch2one() {
+function switch2one(doc, day_index) {
     loop1:
+     var count = 1; 
      for (list in bigList) {
         for (evar in bigList[list]) {
-            if (bigList[list][evar][0] === "today") {
-                bigList[list][evar][1] = 1;
-                changeBoard();
-                // listSet();
-                break loop1;
-            }
-            // console.log("Adi");
+          if(count == day_index)
+          {
+            bigList[list][evar][1] = 1;
+            var bigList1 = JSON.stringify(bigList);
+            db.collection('users').doc(doc.id).update({mygame: bigList1});
+            changeBoard();
+          }
+          count++;
         }
     }
-
-
-
-    // מדפיסים רשימה
-    // bigList.splice(1, 0, "1");
 }
 
 
@@ -266,21 +238,14 @@ function switch2zero() {
                 changeBoard();
                 break loop1;
             }
-            // console.log("Adi");
         }
     }
-
-
-
-    // מדפיסים רשימה
-    // bigList.splice(1, 0, "1");
 }
 
 // //////////////////////////////////////////////////////////////
 
 
 function switch2two() {
-    //
     dailyTip();
     loop2: for (list in bigList) {
         for (subList in bigList[list]) {
@@ -290,9 +255,6 @@ function switch2two() {
                     bigList[list][subList][1] = 2
                     console.log(subList);
                 }
-                // else if(bigList[list][subList][1] === 1){
-
-                // }
 
                 if (Number(subList) < 4) {
                     bigList[list][Number(subList) + 1][0] = "today";

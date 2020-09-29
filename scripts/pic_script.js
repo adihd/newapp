@@ -14,7 +14,6 @@ function readURL(input) {
 
 function saveImg(file)
 {
-  alert("image upload to firebase")
   const setupID = (user) => {
     
     if (user) {
@@ -84,9 +83,8 @@ function uploadFile2(userid , selectedfile, game_code)
 
   },
   function(){
-    var downloadURL = uploadTask.snapshot.downloadURL;
-    console.log(downloadURL);  
+    var downloadURL = uploadTask.snapshot.downloadURL; 
   });
  
-  // var fileRef = storage().child(filename);
+
 }

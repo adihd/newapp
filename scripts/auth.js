@@ -1,4 +1,4 @@
-var bigList0 = [
+ var bigList0 = [
     [
         ["today", 0, ".tile00"],
         ["future", 0, ".tile01"],
@@ -39,6 +39,9 @@ var bigList0 = [
 ]
 
 var bigList1 = JSON.stringify(bigList0);
+
+
+
 
 // listen for auth status changes 
 //  /////////////////////////////////////////////////////////////////////////
@@ -88,21 +91,20 @@ auth.onAuthStateChanged(user => {
       setupID(user);
     }, err => console.log(err.message));
 
+    
+
     // if the user is log out show this : log out null!
   } else {
-    // ×× ×”×ž×©×ª×ž×© ×ž×ª× ×ª×§
+    
     console.log("user is logout and its null")
-    // setupUI();
+    
     setupID();
-    // setupGuides([]);
+  
   }
 });
-//  /////////////////////////////////////////////////////////////////////////
 
 
-// if ( document.URL.includes("homepage.aspx") ) {
-//   //Code here
-// }
+
 
 var urladi = window.location.href;
 var gameCode = "";
@@ -122,12 +124,10 @@ signupForm.addEventListener('submit', (e) => {
   return db.collection('users').doc(cred.user.uid).set({
 
       name: signupForm['signup-name'].value,
-      mail: email,
       my_status: false,
       game_code: gameCode,
       game_points: 0,
       habit: "",
-      max_points: 960,
       partner_id: "",
       partner_name: "",
       user_id: cred.user.uid,
@@ -140,21 +140,24 @@ signupForm.addEventListener('submit', (e) => {
       placeDown:false,
       new_pic:false,
       today:getTodayString(),
+      dayIndex:0,
       new_tip: false,
       mygame: bigList1
     });
     
   }).then(() => {
-    
     signupForm.reset();
+    signupForm.querySelector(".erroradi").innerHTML = "";
     window.location.replace("indexold.html");
-  
 
+  }).catch(err => {
+    signupForm.querySelector(".erroradi").innerHTML = err.message;
   });
 });
 
 function changeDate(doc)
 {
+
   if(doc.data().today == getTodayString()) return;
   
   db.collection('users').doc(doc.id).update({
@@ -182,26 +185,6 @@ function getTodayString()
   var date = new Date();
   return date.yyyymmdd();
 }
-
-////////////sign-up-new-end
-
-// // listen for auth status changes תראה אם המשתמש מתחבר או 
-// let gameCode = "";
-// let existCode = [];
-
-// // create a list with gamecodes from the backend
-// db.collection('create_game').onSnapshot(snapshot => {
-//     snapshot.docs.forEach(doc => {
-//         existCode.push(doc.data().game_code)
-
-//     });
-// })
-
-// var urladi = window.location.href;
-// if (window.location.href.indexOf("forms-info") > -1) {
-//     gameCode = urladi.split("=").pop();
-//     alert(gameCode);
-// };
 
 
 function gamePin(){
@@ -234,7 +217,7 @@ function get_true(v, inputVal)
   if(v == "t") {
         window.document.location = "./forms-invited.html" + "?codeGame=" + inputVal;
   } 
-      // alert(gameCode);
+  
   
 }
 
@@ -267,38 +250,6 @@ function goToWinner(doc)
     window.location.replace("winner.html" + "?codeGame=" + doc.data().game_code);
   }
 
-
-
 }
 
-//  /////////////////////////////////////////////////////////////////////////
-// ! ×”×ª× ×ª×§×•×ª ×ž×”××¤×œ×™×§×¦×™×”
-//  /////////////////////////////////////////////////////////////////////////
-
-// // logout
-// const logout = document.querySelector('#logout');
-// logout.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   auth.signOut();
-// });
-
-// ! ×”×ª×—×‘×¨×•×ª ×œ×•×’ ××™×Ÿ ×œ××¤×œ×™×§×¦×™×”
-// login
-// const loginForm = document.querySelector('#login-form');
-// loginForm.addEventListener('submit', (e) => {
-//   e.preventDefault();
-
-//   // get user info
-//   const email = loginForm['login-email'].value;
-//   const password = loginForm['login-password'].value;
-
-//   // log the user in
-//   auth.signInWithEmailAndPassword(email, password).then((cred) => {
-//     // close the signup modal & reset form
-//     const modal = document.querySelector('#modal-login');
-//     M.Modal.getInstance(modal).close();
-//     loginForm.reset();
-//   });
-
-// });
 

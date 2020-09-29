@@ -15,26 +15,19 @@ h5 {
 .home-noti-btn {
   opacity: 1;
 }
-/* body {
-            position: relative;
-            background: #475766;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            z-index: 0;
-            /* height: 100vh; */
+
 
 .navbar-nocolor {
   background-color: rgba(255, 255, 255, 0);
   border-style: none;
-  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/rip.svg) bottom center; */
+
 }
 .myimg {
-  /* background-image: url(cute-img/cute-knit.svg); */
+
 }
 
 .friendimg{
-  /* background-image: url(cute-img/cute-knit.svg); */
+  
 }
 
 .knit-img{
@@ -96,12 +89,9 @@ h5 {
 }
 
 body {
-  /* position: relative; */
+
   background-color: #E9EEF5;
-  /* margin: 0;
-            padding: 0;
-            width: 100%;
-            z-index: 0; */
+
 }
 
 .card {
@@ -112,20 +102,14 @@ body {
   margin-bottom: 25px;
 }
 
-/* height: 100vh;
 
-        .navbar-nocolor {
-            background-color: rgba(255, 255, 255, 0);
-            border-style: none;
-            /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/rip.svg) bottom center; */
 .notification {
-  /* background-color: #555;
-  color: white; */
+
   text-decoration: none;
   padding: 7px 7px;
   position: relative;
   display: inline-block;
-  /* border-radius: 1px; */
+
 }
 
 

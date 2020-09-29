@@ -1,11 +1,11 @@
 //get reference from html
 const pairs_point_status = document.querySelector('#pairs_point_status'); 
 
-// const user_name = document.querySelector('#user_name_at_nav');
-
 const winPrize = document.querySelector('#the_big_prize');
 
 const pairsSet = new Set();
+
+var adifinishprize = false;
 
 let userid = ""
 var finishpair = false;
@@ -20,7 +20,6 @@ const setupID = (user) => {
 };
 
 
-// userid = temp_userid;
 
 function renderPairs(doc, g_code, user_name){
     if (doc.data().game_code != g_code) return;
@@ -61,7 +60,7 @@ function renderPairs(doc, g_code, user_name){
     
     let progress = document.createElement('progress');
     progress.className = "progress-bar bg-pink";
-    var size = doc.data().game_points / doc.data().max_points;
+    var size = doc.data().game_points / 960 ;
     size = size * 100;
     progress.setAttribute("style", "width:" + size + "%; border-radius:5px;");   
     bar_out.appendChild(progress);
@@ -93,7 +92,7 @@ function setUp(userid)
       else document.getElementById("newPic-prize").style.visibility = "hidden";
     var g_code = doc.data().game_code;
     var user_n = doc.data().name;
-    db.collection('users').doc(doc.id).update({placeDown: false});
+     db.collection('users').doc(doc.id).update({placeDown: false});
     db.collection('users').doc(doc.id).update({placeUp: false});
     callByOrder(g_code, user_n, userid);
       });
@@ -103,11 +102,8 @@ function setUp(userid)
       snapshot.docChanges().forEach(function(change){
         db.collection('users').where("user_id", "==", userid).onSnapshot(snapshot =>{
           snapshot.docs.forEach(doc => {
-            // var g_code = change.doc.data().game_code;
-            // var user_n = change.doc.data().name;
             var g_code = doc.data().game_code;
             var user_n = doc.data().name;
-            console.log("change");
           
             callByOrder(g_code, user_n, userid);
           });
@@ -133,7 +129,6 @@ function setUp(userid)
               
               var winnigPrize = findThePrize(prize);
               winPrize.innerHTML = "The big prize - " + winnigPrize + " :)";
-              console.log(winnigPrize);
                 });
                 
               })
@@ -145,7 +140,7 @@ function setUp(userid)
 
 
 
-
+  adifinishprize = true;
 }
 
 function findThePrize(prize){
@@ -158,7 +153,7 @@ function findThePrize(prize){
       wininigPrize = key;
     }
   }
-  console.log(wininigPrize);
+
   return wininigPrize; 
 }
 
@@ -166,7 +161,6 @@ function callByOrder(g_code, user_n, userid)
 {
       pairs_point_status.innerHTML= "";
       pairsSet.clear();
-      console.log(pairsSet.size + " set size");
 
       db.collection('users').orderBy('place', 'asc').onSnapshot(snapshot =>{
       snapshot.docs.forEach(doc => {

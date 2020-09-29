@@ -1,3 +1,6 @@
+
+var adifinishgallery = false;
+
 const setupID = (user) => {
   if (user) {
     userid = user.uid;
@@ -49,17 +52,9 @@ function setUpGallery(userid)
                     
                   });
               })
-
-      
-                
-
-
-        // var rootRef = firebase.database().ref(doc.data().game_code);
-        // console.log(rootRef);
-        
       });
   })
-  
+  adifinishgallery = true;
 }
 
 function uploadToG(startDate, doc)

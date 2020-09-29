@@ -158,7 +158,7 @@ top
 <a class="navbar-brand" href="#">
                 <img src="cute-img/sloth.png" width="50" height="50" class="" alt="">     <b>BetterYou</b></a>
             <ul class="nav navbar-dark navbar-nav navbar-right">
-                <li><a class="text-white" href="#"><i class="fas fa-sign-in-alt"></i></span> <b>Logout</b></a></li>
+                <li><a class="text-white" href="#"><i class="loguotadi fas fa-sign-in-alt"></i></span> <b>Logout</b></a></li>
             </ul>
         </nav>
          </div>
@@ -326,22 +326,6 @@ padding-top: 70px;">
     <!-- Page Content-->
 
     <!-- Page page-wrapper-->
-
-    <script> 
-        document.onreadystatechange = function() { 
-            if (document.readyState !== "complete") { 
-                document.querySelector( 
-                  "body").style.visibility = "hidden"; 
-                document.querySelector( 
-                  "#loader").style.visibility = "visible"; 
-            } else { 
-                document.querySelector( 
-                  "#loader").style.display = "none"; 
-                document.querySelector( 
-                  "body").style.visibility = "visible"; 
-            } 
-        }; 
-    </script> 
     
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
     </script>
@@ -369,26 +353,24 @@ padding-top: 70px;">
 
 
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-functions.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
     <script>
         // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyB2Au2vtXQIyKSjOgek0kaZAjsM3vXcxJY",
-            authDomain: "betteryou1-1c7a4.firebaseapp.com",
-            databaseURL: "https://betteryou1-1c7a4.firebaseio.com",
-            projectId: "betteryou1-1c7a4",
-            storageBucket: "betteryou1-1c7a4.appspot.com",
-            messagingSenderId: "356574666550",
-            appId: "1:356574666550:web:a7330d9fd93f29bd135d97",
-            measurementId: "G-9CW47VHDH4"
-        };
+  var firebaseConfig = {
+    apiKey: "AIzaSyCYr-4DOOkWY1JEJ-7_CovWKsst6qzmmkc",
+    authDomain: "better-b393f.firebaseapp.com",
+    databaseURL: "https://better-b393f.firebaseio.com",
+    projectId: "better-b393f",
+    storageBucket: "better-b393f.appspot.com",
+    messagingSenderId: "600344432265",
+    appId: "1:600344432265:web:1c7d5f99614e2a45e74058",
+    measurementId: "G-VTP6623CYN"
+  };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
@@ -397,19 +379,13 @@ padding-top: 70px;">
         const storage = firebase.storage();
     </script>
 
-    <!-- <script src="assets/js/app.js"></script> -->
 
+<script src="scripts/login_adi.js"></script>
     <script src="scripts/auth.js"></script>
-    <!-- <script src="scripts/points.js"></script> -->
-    <!-- <script src="scripts/home.js"></script> -->
-    <!-- <script src="adi_home.js"></script> -->
-
-    <!-- <script src="scripts/prize.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <!-- <script  src="./tile_game_script.js"></script> -->
-    <!-- <script src="game1.js"></script> -->
     <script src="adi_ui.js"></script>
     <script src="tile_game.js"></script>
+    <script src="loading_adi.js"></script>
     
     
 
